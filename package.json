@@ -1,0 +1,25 @@
+{
+  "name": "projection-lab",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "server": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-hsien/ProjectionLab.git"
+  },
+  "keywords": [
+    "pixi.js"
+  ],
+  "author": "a-hsien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A-hsien/ProjectionLab/issues"
+  },
+  "homepage": "https://github.com/A-hsien/ProjectionLab#readme"
+}
