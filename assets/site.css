@@ -1,19 +1,18 @@
 /* Ignore => Base Styles */
     
-    body {
+    html, body {
       background: #e3e3e3;
       -webkit-font-smoothing: antialiased;
+      height: 100%;
     }
     
-    .ScrollSceneIndicators {
-      z-index: 9999999 !important;
-    }
-    /* Ignore => Useless Header Styles */
     
     header {
       text-align: center;
-      background: rgb(255, 145, 0);
+      background: url("https://lh3.googleusercontent.com/TiL3L0PhJKnkRqpOSdqXp5HpqCTHndKyt3RP-PdXu5JZZV0MjJ03VfLSSo2pxnr09-Mumy3Pc1wbG4OizDLL0v1XYCsnlS8bO_oqMFZhRa5W_Q1q19KFq5RjNGUo_Dnx29v0HNckee-tZe-bq9EVfGqeOv0d0wJwplSHTa4xYosdqPyfkRRYwinTM11VS8Te197D1wxi-mxdlqCKQOsCuYAlR-t2qwv5Bh9VC7Q4gTp81kZhG5a6YRZDc7sa4kSd6Iney-viYDscROpZtnED5VJmrk49Wm2YWzT2mfIdH5Fix-s3vrg-MHTqI-AnakmyXGCQntiujE6PZmbl-Qys6CqA2FCbHPDG01eJXTFLxggl6aFt65kfQe4hxjNLhBNeAnI0yItJk0-gLTVNzmIx1RttheDhKjCoTcVWBwZMZJ0jF1GWB2laIsOlsJBcBWRFcdtvz50JrkWYhST18_36KouOr5vtHz-_8KC6bx7rEd-x_kW6zjL-O2hOyaXqBJjcWO66UQJo1ILrgtey7SX-fPAfuFZjJSC54yvedbrHqz7JhkxVtXTlqHbiMKxJ7gfHr6mCmUESxBHxmj1HyQVppZDhEiWJBw-jVg4yHuCWKqhvZrDo=w2808-h1877-no") center center fixed no-repeat;
+      background-size: cover;
       padding: 50px 0px 150px 0px;
+      min-height: 100%;
       color: #fff;
       position: relative;
     }
@@ -23,7 +22,7 @@
     }
     
     header h1 {
-      margin-top: 0;
+      margin-top: 250px;
       font-size: 50px;
     }
     
@@ -36,7 +35,7 @@
     }
     
     header hr {
-      max-width: 80px;
+      max-width: 300px;
       border-top: solid 2px #fff;
     }
     
@@ -70,6 +69,15 @@
       width: 104px;
     }
     /* Create huge scrolling area (imitates height of a page) */
+
+    .blur:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    filter: blur(50px);
+    margin: -30px;
+}    
+
     
     main {
       padding: 200px 0 500px 0;
