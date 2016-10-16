@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "server": "lite-server"
+    "serve": "lite-server"
   },
   "devDependencies": {
     "lite-server": "^2.2.0"

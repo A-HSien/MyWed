@@ -1,149 +1,176 @@
-/* Ignore => Base Styles */
-    
-    html, body {
-      background: #e3e3e3;
-      -webkit-font-smoothing: antialiased;
-      height: 100%;
 
-      font: 14px Arial, Helvetica, sans-serif;
-      font-style: normal;
-    }
-    
-    
-    header {
-      text-align: center;
-      background: url("https://lh3.googleusercontent.com/TiL3L0PhJKnkRqpOSdqXp5HpqCTHndKyt3RP-PdXu5JZZV0MjJ03VfLSSo2pxnr09-Mumy3Pc1wbG4OizDLL0v1XYCsnlS8bO_oqMFZhRa5W_Q1q19KFq5RjNGUo_Dnx29v0HNckee-tZe-bq9EVfGqeOv0d0wJwplSHTa4xYosdqPyfkRRYwinTM11VS8Te197D1wxi-mxdlqCKQOsCuYAlR-t2qwv5Bh9VC7Q4gTp81kZhG5a6YRZDc7sa4kSd6Iney-viYDscROpZtnED5VJmrk49Wm2YWzT2mfIdH5Fix-s3vrg-MHTqI-AnakmyXGCQntiujE6PZmbl-Qys6CqA2FCbHPDG01eJXTFLxggl6aFt65kfQe4hxjNLhBNeAnI0yItJk0-gLTVNzmIx1RttheDhKjCoTcVWBwZMZJ0jF1GWB2laIsOlsJBcBWRFcdtvz50JrkWYhST18_36KouOr5vtHz-_8KC6bx7rEd-x_kW6zjL-O2hOyaXqBJjcWO66UQJo1ILrgtey7SX-fPAfuFZjJSC54yvedbrHqz7JhkxVtXTlqHbiMKxJ7gfHr6mCmUESxBHxmj1HyQVppZDhEiWJBw-jVg4yHuCWKqhvZrDo=w1500-h1000-no") no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+@font-face {
+    font-family: 'cwTeXHei';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
 
-      padding: 150px 0px 150px 0px;
-      min-height: 100%;
-      color: #fff;
-      position: relative;
-    }
-    
-    header * {
-      text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.35);
-    }
-    
-    header h1 {
-      font-size: 50px;
-    }
-    
-    header h1 i.fa-heart {
-      color: rgb(221, 75, 80);
-    }
-    
-    header h1 i.fa-magic {
-      color: rgb(39, 97, 223);
-    }
-    
-    header hr {
-      max-width: 300px;
-      border-top: solid 2px #fff;
-    }
-    
-    header h2 {
-      margin-bottom: 30px;
-    }
-    
-    header p {
-      margin-bottom: 0px;
-    }
-    
-    header i.fa-angle-double-down {
-      font-size: 50px;
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
-      transform: translateX(-50%);
-      color: #111;
-    }
-    
-    header i.fa-angle-double-down:after {
-      content: 'Start Scrolling Down';
-      position: absolute;
-      bottom: 100%;
-      left: -35px;
-      font-size: 15px;
-      width: 104px;
-    }
-    /* Create huge scrolling area (imitates height of a page) */
+html, body {
+    background: #e3e3e3;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    font-family: 'cwTeXHei', serif;
+    font-size: large;
+    font-style: normal;
+}
 
-    .blur:before {
+@keyframes text-shadow {
+    0% {
+        text-shadow: 0px 0px 12px #404040;
+    }
+
+    50% {
+        text-shadow: 0px 0px 16px #2c2c2c;
+    }
+
+    100% {
+        text-shadow: 0px 0px 12px #404040;
+    }
+}
+
+.blur:before {
     content: '';
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: -webkit-radial-gradient(ellipse,rgba(255,255,255,0),rgba(255,255,255,0.2));
-    background: -o-radial-gradient(ellipse,rgba(255,255,255,0),rgba(255,255,255,0.2));
-    background: -moz-radial-gradient(ellipse,rgba(255,255,255,0),rgba(255,255,255,0.2));
-    background: radial-gradient(ellipse,rgba(255,255,255,0),rgba(255,255,255,0.2));
-    margin: -30px;
-}    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.3+20,0+100 */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0.3) 20%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0.3) 20%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
 
-    
-    main {
-      padding: 200px 0 500px 0;
-      overflow: hidden;
+
+
+
+
+
+/* header area */
+header {
+    text-align: center;
+    background: url("https://lh3.googleusercontent.com/TiL3L0PhJKnkRqpOSdqXp5HpqCTHndKyt3RP-PdXu5JZZV0MjJ03VfLSSo2pxnr09-Mumy3Pc1wbG4OizDLL0v1XYCsnlS8bO_oqMFZhRa5W_Q1q19KFq5RjNGUo_Dnx29v0HNckee-tZe-bq9EVfGqeOv0d0wJwplSHTa4xYosdqPyfkRRYwinTM11VS8Te197D1wxi-mxdlqCKQOsCuYAlR-t2qwv5Bh9VC7Q4gTp81kZhG5a6YRZDc7sa4kSd6Iney-viYDscROpZtnED5VJmrk49Wm2YWzT2mfIdH5Fix-s3vrg-MHTqI-AnakmyXGCQntiujE6PZmbl-Qys6CqA2FCbHPDG01eJXTFLxggl6aFt65kfQe4hxjNLhBNeAnI0yItJk0-gLTVNzmIx1RttheDhKjCoTcVWBwZMZJ0jF1GWB2laIsOlsJBcBWRFcdtvz50JrkWYhST18_36KouOr5vtHz-_8KC6bx7rEd-x_kW6zjL-O2hOyaXqBJjcWO66UQJo1ILrgtey7SX-fPAfuFZjJSC54yvedbrHqz7JhkxVtXTlqHbiMKxJ7gfHr6mCmUESxBHxmj1HyQVppZDhEiWJBw-jVg4yHuCWKqhvZrDo=w1500-h1000-no") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 150px;
+    min-height: 100%;
+    color: #fff;
+    position: relative;
+}
+
+
+    header * {
+        animation: text-shadow 5s linear infinite;
     }
-    /* Styles for wrap for demo */
-    
-    .wrap {
-      text-align: center;
-      background: #fff;
-      padding: 50px 0;
-      -moz-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
-      -webkit-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
-      box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
-      position: relative;
-      margin-bottom: 50px;
-      overflow: hidden;
+
+    header h1 {
+        font-size: 5rem;
+        word-break: keep-all;
     }
-    /* Default Animation Styles */
-    
-    .animation {
-      background: #000;
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      margin: 50px auto;
-      position: relative;
+
+        header h1 i.fa-heart {
+            color: rgb(221, 75, 80);
+        }
+
+        header h1 i.fa-magic {
+            color: rgb(39, 97, 223);
+        }
+
+    header hr {
+        max-width: 300px;
+        border-top: solid 2px #fff;
     }
-    
+
+    header h2 {
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+
+    header p {
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+    }
+
+    header i.fa-angle-double-down {
+        font-size: 50px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        color: #fff;
+    }
+
+
+
+
+
+
+
+/* main area */
+/* Create huge scrolling area (imitates height of a page) */
+main {
+    overflow: hidden;
+    -webkit-transition: all 800ms ease;
+    -moz-transition: all 800ms ease;
+    transition: all 800ms ease;
+    margin-top: 15px;
+}
+
+.wrap {
+    text-align: center;
+    background: #fff;
+    padding: 50px 0;
+    -moz-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+    -webkit-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+    box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+/* Default Animation Styles */
+.animation {
+    background: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 50px auto;
+    position: relative;
+}
+
     .animation i {
-      color: #fff;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      font-size: 30px;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+        color: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 30px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
-    /* SCENE COLORS */
-    
-    body {
-      -webkit-transition: all 800ms ease;
-      -moz-transition: all 800ms ease;
-      transition: all 800ms ease;
-    }
-    
-    body.scene-1-active {
-      background: rgb(211, 39, 45) !important;
-    }
-    
-    body.scene-2-active {
-      background: rgb(0, 205, 150) !important;
-    }
-    
-    body.scene-3-active {
-      background: rgb(2, 0, 60) !important;
-    }
+
+/* SCENE COLORS */
+main.scene-1-active {
+    background: rgb(211, 39, 45) !important;
+}
+
+main.scene-2-active {
+    background: rgb(0, 205, 150) !important;
+}
+
+main.scene-3-active {
+    background: rgb(2, 0, 60) !important;
+}
