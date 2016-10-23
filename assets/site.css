@@ -52,14 +52,16 @@ html, body {
 
 /* header area */
 header {
-    background: url(./img/header.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
+    background: url("./img/header.jpg") center center fixed no-repeat;
+    -webkit-background-size:cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover!important;
+    background-size: cover;
 
     padding-top: 150px;
     min-height: 100%;
+    color: #fff;
+    position: relative;
 }
 
 
