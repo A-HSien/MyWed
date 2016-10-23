@@ -16,19 +16,6 @@ html, body {
     font-style: normal;
 }
 
-@keyframes text-shadow {
-    0% {
-        text-shadow: 0px 0px 12px #404040;
-    }
-
-    50% {
-        text-shadow: 0px 0px 16px #2c2c2c;
-    }
-
-    100% {
-        text-shadow: 0px 0px 12px #404040;
-    }
-}
 
 .blur:before {
     content: '';
@@ -65,12 +52,12 @@ html, body {
 
 /* header area */
 header {
-    text-align: center;
-    background: url("./img/header.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
+    background: url("./img/header.jpg") center center fixed no-repeat;
+    -webkit-background-size:cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
     padding-top: 150px;
     min-height: 100%;
     color: #fff;
@@ -79,7 +66,8 @@ header {
 
 
     header * {
-        animation: text-shadow 5s linear infinite;
+        text-align: center;
+        text-shadow: 0px 0px 12px #404040;
     }
 
     header h1 {
@@ -127,15 +115,15 @@ header {
 
 @media screen and (max-width:768px ) {
     header h1 {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     header p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
@@ -157,6 +145,11 @@ nav {
             color: #2e2e2e;
         }
 
+@media screen and (max-width:768px ) {
+    nav > ul > li {
+        font-size: 1rem;
+    }
+}
 
 .fullpage {
     min-height: 100%;
