@@ -56,11 +56,10 @@ header {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover!important;
+
     padding-top: 150px;
     min-height: 100%;
-    color: #fff;
-    position: relative;
 }
 
 
