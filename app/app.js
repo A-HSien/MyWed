@@ -88,4 +88,7 @@
         });
         infowindow.open(map, marker);
     };
+
+
+    $(".rslides").responsiveSlides();
 });

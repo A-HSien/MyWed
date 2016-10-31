@@ -17,40 +17,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css">
     <link rel="stylesheet" href="./assets/site.css">
 </head>
 
 <body>
 
     <header class="blur">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 col-sm-12 js-headerContent">
-                    <h1>
-                        <!--<i class="fa fa-magic"></i>-->
-                        張效賢 陳思樺
-                        <!--<i class="fa fa-heart"></i>-->
-                    </h1>
-                    <hr>
-                    <h2>2017/06/03</h2>
-                    <p>COMING SOON!!</p>
-                </div>
-            </div>
-        </div>
+        <video poster="./img/header.jpg" autoplay muted loop>
+            <source src="assets/video/forest.mp4" type="video/mp4" />
+        </video>
+        <img src="assets/img/LOGO.png">
         <i class="fa fa-angle-double-down"></i>
     </header>
 
     <nav>
         <ul>
-            <li>頁首</li>
-            <li>影片</li>
-            <li>婚攝</li>
-            <li>宴客</li>
-            <li>報名</li>
+            <li><i class="fa fa-magic"></i>頁首</li>
+            <li><i class="fa fa-heart"></i>影片</li>
+            <li><i class="fa fa-magic"></i>婚攝</li>
+            <li><i class="fa fa-heart"></i>宴客</li>
+            <li><i class="fa fa-magic"></i>報名</li>
         </ul>
     </nav>
 
-    <div class="container-fluid no-gutter fullpage" style="background-image:url('./assets/img/background/skulls.png')">
+    <!--<div class="container-fluid no-gutter fullpage" style="background-image:url('./assets/img/background/skulls.png')">
         <div class="row no-gutter">
             <div class="col-md-4">
                 <div class="wrap" id="scene-1">
@@ -71,10 +62,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <div class="container-fluid no-gutter fullpage" style="background-image:url('./assets/img/background/symphony.png')">
-        <div class="row no-gutter page">
+        <div class="row no-gutter">
             <div class="col-md-8 offset-md-2 col-sm-12">
                 <h2>
                     豪鼎飯店(北新店)<br>
@@ -84,6 +75,38 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid no-gutter fullpage" style="background-image:url('./assets/img/background/symphony.png')">
+        <div class="row no-gutter">
+            <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="fotorama" data-nav="thumbs">
+                    <img src="assets/img/gallery/W_J002190-0001.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0034.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0041.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0049.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0088.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0091.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0092.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0094.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0096.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0105.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0132.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0143.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0149.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0158.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0170.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0173.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0179.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0183.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0188.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0203.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0215.jpg" />
+                    <img src="assets/img/gallery/W_J002190-0222.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
@@ -96,6 +119,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
     <script src="./app/app.js"></script>
 
