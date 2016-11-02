@@ -98,7 +98,7 @@ header.img-background {
     }
 
 
-@media screen and (max-width:768px ) {
+@media screen and (max-width:992px ) {
 
     header img {
         top: 75%;
@@ -125,9 +125,10 @@ nav {
             color: #2e2e2e;
         }
 
-@media screen and (max-width:768px ) {
-    nav > ul > li {
-        font-size: 0.8rem;
+@media screen and (max-width:992px ) {
+   
+    nav > ul  {
+        padding: 10px;
     }
 }
 
