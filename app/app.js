@@ -117,4 +117,5 @@
         $video.fadeIn();
         $header.removeClass('img-background');
     });
+    $video[0].play();
 });
