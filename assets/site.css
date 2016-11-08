@@ -8,7 +8,6 @@
 }
 
 html, body {
-    background: #fff;
     -webkit-font-smoothing: antialiased;
     height: 100%;
     font-family: 'cwTeXHei', serif;
@@ -25,14 +24,12 @@ html, body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0, 0.7);
+    background: rgba(0,0,0, 0.8);
 }
 
 .no-gutter.row,
 .no-gutter.container,
 .no-gutter.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
     margin-left: 0;
     margin-right: 0;
 }
@@ -42,12 +39,13 @@ html, body {
     padding-right: 0;
 }
 
-
+.row {
+    padding: 30px 0 30px 0;
+}
 
 
 /* header area */
 header {
-    background-color: black;
     display: block;
     position: relative;
     min-height: 100%;
@@ -56,11 +54,11 @@ header {
     box-sizing: border-box;
 }
 
-header.img-background {
-    background: url("./img/header.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
+    header.img-background {
+        background: url("./img/header.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
 
     header i.fa-angle-double-down {
         color: #fff;
@@ -88,14 +86,27 @@ header.img-background {
     }
 
     header video {
-        z-index: 0;
-        position: absolute;
+    background-color: black;
+        z-index: -1;
+        position: fixed;
         top: 50%;
         left: 50%;
-        min-width: 100%;
-        max-height: 100%;
+        width: auto;
+        height: auto;
         transform: translate(-50%, -50%);
     }
+
+@media screen and (orientation: portrait) {
+    header video {
+        min-height: 100%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    header video {
+        min-width: 100%;
+    }
+}
 
 
 @media screen and (max-width:992px ) {
@@ -126,8 +137,8 @@ nav {
         }
 
 @media screen and (max-width:992px ) {
-   
-    nav > ul  {
+
+    nav > ul {
         padding: 10px;
     }
 }
@@ -155,5 +166,5 @@ nav {
 
 
 .map {
-    height:350px;
+    height: 350px;
 }
