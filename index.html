@@ -23,12 +23,12 @@
 
 <body>
 
-    <header class="blur img-background">
+    <header class="blur-White img-background">
         <video muted preload="metadata" playsinline webkit-playsinline>
             <source src="assets/video/forest.mp4" type="video/mp4" />
         </video>
-        <img src="assets/img/LOGO.png" class="js-hodeOnPlay">
-        <i class="fa fa-angle-double-down js-hodeOnPlay"></i>
+        <img src="assets/img/LOGO.png" class="js-hideOnPlay">
+        <i class="fa fa-angle-double-down js-hideOnPlay"></i>
     </header>
 
     <nav>
@@ -66,43 +66,76 @@
     <!--<div class="container-fluid no-gutter fullpage" style="background-image:url('./assets/background/symphony.png')">-->
 
 
-    <main class="container-fluid no-gutter" style="background-color:#fff">
-        <div class="row no-gutter">
-            <div class="col-lg-8 offset-lg-2 col-md-12">
-                <h2>
-                    豪鼎飯店(北新店) 7點入席
-                </h2>
-                <div class="map"></div>
-            </div>
-        </div>
-        <div class="row no-gutter">
-            <div class="col-lg-8 offset-lg-2 col-md-12">
-                <div class="fotorama" data-nav="thumbs" data-navposition="top" data-autoplay="true" data-loop="true">
-                    <a href="assets/img/gallery/W_J002190-0001.jpg" data-thumb="assets/img/thumbnail/W_J002190-0001.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0034.jpg" data-thumb="assets/img/thumbnail/W_J002190-0034.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0041.jpg" data-thumb="assets/img/thumbnail/W_J002190-0041.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0049.jpg" data-thumb="assets/img/thumbnail/W_J002190-0049.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0088.jpg" data-thumb="assets/img/thumbnail/W_J002190-0088.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0091.jpg" data-thumb="assets/img/thumbnail/W_J002190-0091.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0092.jpg" data-thumb="assets/img/thumbnail/W_J002190-0092.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0094.jpg" data-thumb="assets/img/thumbnail/W_J002190-0094.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0096.jpg" data-thumb="assets/img/thumbnail/W_J002190-0096.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0105.jpg" data-thumb="assets/img/thumbnail/W_J002190-0105.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0132.jpg" data-thumb="assets/img/thumbnail/W_J002190-0132.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0143.jpg" data-thumb="assets/img/thumbnail/W_J002190-0143.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0149.jpg" data-thumb="assets/img/thumbnail/W_J002190-0149.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0158.jpg" data-thumb="assets/img/thumbnail/W_J002190-0158.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0170.jpg" data-thumb="assets/img/thumbnail/W_J002190-0170.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0173.jpg" data-thumb="assets/img/thumbnail/W_J002190-0173.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0179.jpg" data-thumb="assets/img/thumbnail/W_J002190-0179.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0183.jpg" data-thumb="assets/img/thumbnail/W_J002190-0183.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0188.jpg" data-thumb="assets/img/thumbnail/W_J002190-0188.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0203.jpg" data-thumb="assets/img/thumbnail/W_J002190-0203.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0215.jpg" data-thumb="assets/img/thumbnail/W_J002190-0215.jpg"></a>
-                    <a href="assets/img/gallery/W_J002190-0222.jpg" data-thumb="assets/img/thumbnail/W_J002190-0222.jpg"></a>
+    <main class="" style="background-image:url('./assets/background/pink_rice.png')">
+        <section id="clock-container">
+            <h5 class="title">
+                重要的一天即將到來, 期待您加入我們的派對｡
+            </h5>
+            <div id="clockdiv">
+                <div>
+                    <span class="days"></span>
+                    <div class="smalltext">Days</div>
+                </div>
+                <div>
+                    <span class="hours"></span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section id="map-container">
+            <div class="map-content">
+                <h4 class="title">
+                    豪鼎飯店(北新店) 7點入席
+                </h4>
+            </div>
+            <div class="location-marker"><i class="fa fa-child fa-lg" aria-hidden="true"></i></div>
+            <div class="location-marker location-marker-animation"></div>
+            <div class="map blur-black"></div>
+        </section>
+
+        <section id="story-container">
+            <div class="">
+                <h4 class="title" style="padding:60px 0">
+                    回憶時刻
+                </h4>
+                <div style="height:300px;text-align:center">一些照片</div>
+            </div>
+        </section>
+
+        <section class="fotorama" data-nav="thumbs" data-navposition="top" data-autoplay="true" data-loop="true">
+            <a href="assets/img/gallery/W_J002190-0001.jpg" data-thumb="assets/img/thumbnail/W_J002190-0001.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0034.jpg" data-thumb="assets/img/thumbnail/W_J002190-0034.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0041.jpg" data-thumb="assets/img/thumbnail/W_J002190-0041.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0049.jpg" data-thumb="assets/img/thumbnail/W_J002190-0049.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0088.jpg" data-thumb="assets/img/thumbnail/W_J002190-0088.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0091.jpg" data-thumb="assets/img/thumbnail/W_J002190-0091.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0092.jpg" data-thumb="assets/img/thumbnail/W_J002190-0092.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0094.jpg" data-thumb="assets/img/thumbnail/W_J002190-0094.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0096.jpg" data-thumb="assets/img/thumbnail/W_J002190-0096.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0105.jpg" data-thumb="assets/img/thumbnail/W_J002190-0105.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0132.jpg" data-thumb="assets/img/thumbnail/W_J002190-0132.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0143.jpg" data-thumb="assets/img/thumbnail/W_J002190-0143.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0149.jpg" data-thumb="assets/img/thumbnail/W_J002190-0149.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0158.jpg" data-thumb="assets/img/thumbnail/W_J002190-0158.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0170.jpg" data-thumb="assets/img/thumbnail/W_J002190-0170.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0173.jpg" data-thumb="assets/img/thumbnail/W_J002190-0173.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0179.jpg" data-thumb="assets/img/thumbnail/W_J002190-0179.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0183.jpg" data-thumb="assets/img/thumbnail/W_J002190-0183.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0188.jpg" data-thumb="assets/img/thumbnail/W_J002190-0188.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0203.jpg" data-thumb="assets/img/thumbnail/W_J002190-0203.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0215.jpg" data-thumb="assets/img/thumbnail/W_J002190-0215.jpg"></a>
+            <a href="assets/img/gallery/W_J002190-0222.jpg" data-thumb="assets/img/thumbnail/W_J002190-0222.jpg"></a>
+
+        </section>
     </main>
 
 

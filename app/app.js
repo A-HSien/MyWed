@@ -1,9 +1,26 @@
 ﻿$(function () {
 
-
     var scrollMagicController = new ScrollMagic.Controller();
 
-    // header
+
+    /**
+     * header
+     */
+    var $header = $('header');
+    var $video = $header.find('video');
+    $video.on('ended', function () {
+        $video.fadeOut();
+        $header.addClass('img-background');
+        setTimeout(function () {
+            $header.toggleClass('img-background');
+            $video[0].play();
+        }, 3000);
+    });
+    $video.on('play', function () {
+        $video.fadeIn();
+        $header.removeClass('img-background');
+    });
+    $video[0].play();
     var header = {
         imgScene: new ScrollMagic.Scene({
             triggerElement: 'header img',
@@ -32,6 +49,8 @@
     header.navScene
         .setTween(header.navAction)
         .addTo(scrollMagicController);
+
+
 
 
     //var tween1 = TweenMax.to('#animation-1', 0.5, {
@@ -75,6 +94,59 @@
     //    .setTween(tween3)
     //    .addTo(scrollMagicController);
 
+
+
+    /** 
+     * 倒數計時
+     */
+    function CountdownClock(id, endtime) {
+        this.endtime = endtime;
+        this.timeinterval = null;
+
+        var clock = document.getElementById(id);
+        this.daysSpan = clock.querySelector('.days');
+        this.hoursSpan = clock.querySelector('.hours');
+        this.minutesSpan = clock.querySelector('.minutes');
+        this.secondsSpan = clock.querySelector('.seconds');
+
+        this.updateClock();
+        this.timeinterval = setInterval(this.updateClock.bind(this), 300);
+    };
+    CountdownClock.prototype.updateClock = function () {
+        var t = this.getTimeRemaining(this.endtime);
+
+        this.daysSpan.innerHTML = t.days;
+        this.hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        this.minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        this.secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+            clearInterval(this.timeinterval);
+        }
+    };
+    CountdownClock.prototype.getTimeRemaining = function () {
+        var t = Date.parse(this.endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    };
+
+    var deadline = new Date(2017, 6 - 1, 3); //2017-6-3
+    new CountdownClock('clockdiv', deadline);
+
+
+
+    /**
+     * maps
+     */
     google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
@@ -88,34 +160,18 @@
 
         var map = new google.maps.Map(mapElement, mapOptions);
 
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            title: '豪鼎飯店(北新店)'
-        });
-        var info = new google.maps.InfoWindow({
-            content:
-                '<a href="' +
-                'https://www.google.com.tw/maps/place/%E8%B1%AA%E9%BC%8E%E9%A3%AF%E5%BA%97+%E5%8C%97%E6%96%B0%E6%97%97%E8%89%A6%E9%A4%A8/@24.984038,121.5379173,17z/data=!3m1!4b1!4m5!3m4!1s0x346801fed70ad06d:0x2b2b0cae3db1b50c!8m2!3d24.984038!4d121.540106' +
-                '" target="_blank">豪鼎飯店(北新店)</a>'
-        });
-        info.open(map, marker);
+        //var marker = new google.maps.Marker({
+        //    position: location,
+        //    map: map,
+        //    title: '豪鼎飯店(北新店)'
+        //});
+        //var info = new google.maps.InfoWindow({
+        //    content:
+        //        '<a href="' +
+        //        'https://www.google.com.tw/maps/place/%E8%B1%AA%E9%BC%8E%E9%A3%AF%E5%BA%97+%E5%8C%97%E6%96%B0%E6%97%97%E8%89%A6%E9%A4%A8/@24.984038,121.5379173,17z/data=!3m1!4b1!4m5!3m4!1s0x346801fed70ad06d:0x2b2b0cae3db1b50c!8m2!3d24.984038!4d121.540106' +
+        //        '" target="_blank">豪鼎飯店(北新店)</a>'
+        //});
+        //info.open(map, marker);
     };
 
-
-    var $header = $('header');
-    var $video = $header.find('video');
-    $video.on('ended', function () {
-        $video.fadeOut();
-        $header.addClass('img-background');
-        setTimeout(function () {
-            $header.toggleClass('img-background');
-            $video[0].play();
-        }, 3000);
-    });
-    $video.on('play', function () {
-        $video.fadeIn();
-        $header.removeClass('img-background');
-    });
-    $video[0].play();
 });
