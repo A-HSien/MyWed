@@ -21,7 +21,8 @@
         $header.removeClass('img-background');
     });
     $video[0].play();
-    var header = {
+
+    var headerAction = {
         imgScene: new ScrollMagic.Scene({
             triggerElement: 'header img',
             duration: 1600,
@@ -42,58 +43,28 @@
             force3D: true
         })
     };
-    header.imgScene
-        .setTween(header.imgAction)
+    headerAction.imgScene
+        .setTween(headerAction.imgAction)
         .addTo(scrollMagicController);
 
-    header.navScene
-        .setTween(header.navAction)
+    //headerAction.navScene
+    //    .setTween(headerAction.navAction)
+    //    .addTo(scrollMagicController);
+
+
+
+
+    /** 
+     * announce
+     */
+    new ScrollMagic.Scene({
+        triggerElement: '#announce'
+    }).setTween('#announce .selfie-left', 0.5, { 'left': "30%" })
         .addTo(scrollMagicController);
-
-
-
-
-    //var tween1 = TweenMax.to('#animation-1', 0.5, {
-    //    backgroundColor: 'rgb(255, 39, 46)',
-    //    scale: 2,
-    //    rotation: 360
-    //});
-
-    //var scene1 = new ScrollMagic.Scene({
-    //    triggerElement: '#scene-1',
-    //    offset: 10
-    //}).setClassToggle('body', 'scene-1-active')
-    //    .setTween(tween1)
-    //    .addTo(scrollMagicController);
-
-
-    //var tween2 = TweenMax.to('#animation-2', 1.5, {
-    //    backgroundColor: 'rgb(0, 255, 187)',
-    //    scale: 5,
-    //    rotation: 1080
-    //});
-
-    //var scene2 = new ScrollMagic.Scene({
-    //    triggerElement: '#scene-2',
-    //    offset: 30
-    //}).setClassToggle('body', 'scene-2-active')
-    //    .setTween(tween2)
-    //    .addTo(scrollMagicController);
-
-
-    //var tween3 = TweenMax.to('#animation-3', 1, {
-    //    backgroundColor: 'rgb(17, 0, 98)',
-    //    scale: 10,
-    //    rotation: 720
-    //});
-
-    //var scene3 = new ScrollMagic.Scene({
-    //    triggerElement: '#scene-3',
-    //    offset: 60
-    //}).setClassToggle('body', 'scene-3-active')
-    //    .setTween(tween3)
-    //    .addTo(scrollMagicController);
-
+    new ScrollMagic.Scene({
+        triggerElement: '#announce'
+    }).setTween('#announce .selfie-right', 0.5, { 'left': "70%" })
+        .addTo(scrollMagicController);
 
 
     /** 
@@ -143,13 +114,20 @@
     new CountdownClock('clockdiv', deadline);
 
 
+    new ScrollMagic.Scene({
+        triggerElement: '#announce',
+        duration: '100%',
+    })
+        .setTween('#clock-container', 0.5, { 'background-position-y': "0%", ease: Linear.easeNone })
+        .addTo(scrollMagicController);
+
+
+
 
     /**
      * maps
      */
-    google.maps.event.addDomListener(window, 'load', init);
-
-    function init() {
+    function initMap() {
         var location = new google.maps.LatLng('24.984038', '121.5379173');
         var mapOptions = {
             zoom: 12, draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true, center: location,
@@ -173,5 +151,7 @@
         //});
         //info.open(map, marker);
     };
+    google.maps.event.addDomListener(window, 'load', initMap);
+
 
 });
