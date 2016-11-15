@@ -58,17 +58,7 @@ section {
     background: rgba(0,0,0, 0.3);
 }
 
-.no-gutter.row,
-.no-gutter.container,
-.no-gutter.container-fluid {
-    margin-left: 0;
-    margin-right: 0;
-}
 
-.no-gutter > [class^="col-"] {
-    padding-left: 0;
-    padding-right: 0;
-}
 
 
 .title {
@@ -187,7 +177,7 @@ nav {
 
     #announce .selfie {
         position: absolute;
-        background-color: brown;
+        border-radius: 50%;
         width: 20%;
         max-width: 220px;
         min-width: 120px;
@@ -340,3 +330,13 @@ nav {
     animation-iteration-count: infinite;
 }
 /*map end*/
+
+
+
+/*story*/
+#story-container{
+    background: url("./background/pexels-photo-169211.jpeg") no-repeat;
+    background-size: 100% auto;
+    background-position-x: 50%;
+    background-position-y: 100%;}
+/*story end*/

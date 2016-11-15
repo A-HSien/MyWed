@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyWed</title>
 
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -44,8 +43,8 @@
 
     <main style="background-image:url('./assets/background/asanoha-400px.png')">
         <section class="shadow" id="announce">
-            <img src="assets/img/ahsien.jpg" class="img-circle selfie selfie-left">
-            <img src="assets/img/sha.jpg" class="img-circle selfie selfie-right">
+            <img src="assets/img/ahsien.jpg" class="selfie selfie-left">
+            <img src="assets/img/sha.jpg" class="selfie selfie-right">
             <div class="content">
                 <h3 class="title">我們要結婚囉!</h3><br>
                 重要的一天即將到來,<br>
@@ -84,7 +83,7 @@
             <div class="map blur-black"></div>
         </section>
 
-        <section id="story-container">
+        <section id="story-container" class="shadow">
             <div class="">
                 <h4 class="title" style="padding:60px 0">
                     回憶時刻
@@ -93,7 +92,7 @@
             </div>
         </section>
 
-        <section class="fotorama" data-nav="thumbs" data-navposition="top" data-autoplay="true" data-loop="true">
+        <section class="fotorama" data-nav="thumbs" data-navposition="top" data-autoplay="true" data-loop="true" data-auto="false">
             <a href="assets/img/gallery/W_J002190-0001.jpg" data-thumb="assets/img/thumbnail/W_J002190-0001.jpg"></a>
             <a href="assets/img/gallery/W_J002190-0034.jpg" data-thumb="assets/img/thumbnail/W_J002190-0034.jpg"></a>
             <a href="assets/img/gallery/W_J002190-0041.jpg" data-thumb="assets/img/thumbnail/W_J002190-0041.jpg"></a>
@@ -118,6 +117,12 @@
             <a href="assets/img/gallery/W_J002190-0222.jpg" data-thumb="assets/img/thumbnail/W_J002190-0222.jpg"></a>
 
         </section>
+
+        <!--<section id="gallery-container">
+
+            <div class="photos"></div>
+        </section>-->
+
     </main>
 
 
@@ -125,8 +130,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU"
             crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>

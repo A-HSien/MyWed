@@ -59,11 +59,11 @@
      */
     new ScrollMagic.Scene({
         triggerElement: '#announce'
-    }).setTween('#announce .selfie-left', 0.5, { 'left': "30%" })
+    }).setTween(TweenMax.to('#announce .selfie-left', 1, { css: { 'left': "30%" } }))
         .addTo(scrollMagicController);
     new ScrollMagic.Scene({
         triggerElement: '#announce'
-    }).setTween('#announce .selfie-right', 0.5, { 'left': "70%" })
+    }).setTween(TweenMax.to('#announce .selfie-right', 1, { css: { 'left': "70%" } }))
         .addTo(scrollMagicController);
 
 
@@ -116,9 +116,13 @@
 
     new ScrollMagic.Scene({
         triggerElement: '#announce',
-        duration: '100%',
+        triggerHook: "onEnter",
+        duration: '250%',
     })
-        .setTween('#clock-container', 0.5, { 'background-position-y': "0%", ease: Linear.easeNone })
+        .setTween(TweenMax.to('#clock-container', 0.000001, {
+            css: { 'background-position-y': "50%" },
+            ease: Linear.easeNone
+        }))
         .addTo(scrollMagicController);
 
 
@@ -154,4 +158,82 @@
     google.maps.event.addDomListener(window, 'load', initMap);
 
 
+    /**
+     * story
+     */
+    new ScrollMagic.Scene({
+        triggerElement: '#map-container',
+        triggerHook: "onEnter",
+        duration: '250%',
+    })
+        .setTween(TweenMax.to('#story-container', 0.000001, {
+            css: { 'background-position-y': "50%" },
+            ease: Linear.easeNone
+        }))
+        .addTo(scrollMagicController);
+
+
+
+    /**
+     * photo gallery
+     */
+    //        <a href="assets/img/gallery/W_J002190-0001.jpg" data-thumb="assets/img/thumbnail/W_J002190-0001.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0034.jpg" data-thumb="assets/img/thumbnail/W_J002190-0034.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0041.jpg" data-thumb="assets/img/thumbnail/W_J002190-0041.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0049.jpg" data-thumb="assets/img/thumbnail/W_J002190-0049.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0088.jpg" data-thumb="assets/img/thumbnail/W_J002190-0088.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0091.jpg" data-thumb="assets/img/thumbnail/W_J002190-0091.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0092.jpg" data-thumb="assets/img/thumbnail/W_J002190-0092.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0094.jpg" data-thumb="assets/img/thumbnail/W_J002190-0094.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0096.jpg" data-thumb="assets/img/thumbnail/W_J002190-0096.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0105.jpg" data-thumb="assets/img/thumbnail/W_J002190-0105.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0132.jpg" data-thumb="assets/img/thumbnail/W_J002190-0132.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0143.jpg" data-thumb="assets/img/thumbnail/W_J002190-0143.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0149.jpg" data-thumb="assets/img/thumbnail/W_J002190-0149.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0158.jpg" data-thumb="assets/img/thumbnail/W_J002190-0158.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0170.jpg" data-thumb="assets/img/thumbnail/W_J002190-0170.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0173.jpg" data-thumb="assets/img/thumbnail/W_J002190-0173.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0179.jpg" data-thumb="assets/img/thumbnail/W_J002190-0179.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0183.jpg" data-thumb="assets/img/thumbnail/W_J002190-0183.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0188.jpg" data-thumb="assets/img/thumbnail/W_J002190-0188.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0203.jpg" data-thumb="assets/img/thumbnail/W_J002190-0203.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0215.jpg" data-thumb="assets/img/thumbnail/W_J002190-0215.jpg"></a>
+    //        <a href="assets/img/gallery/W_J002190-0222.jpg" data-thumb="assets/img/thumbnail/W_J002190-0222.jpg"></a>
+
+    var photos = [
+        'assets/img/gallery/W_J002190-0001.jpg',
+        'assets/img/gallery/W_J002190-0034.jpg',
+        'assets/img/gallery/W_J002190-0041.jpg',
+        'assets/img/gallery/W_J002190-0049.jpg',
+        'assets/img/gallery/W_J002190-0088.jpg',
+        'assets/img/gallery/W_J002190-0091.jpg',
+        'assets/img/gallery/W_J002190-0092.jpg',
+        'assets/img/gallery/W_J002190-0094.jpg',
+        'assets/img/gallery/W_J002190-0096.jpg',
+        'assets/img/gallery/W_J002190-0105.jpg',
+        'assets/img/gallery/W_J002190-0132.jpg',
+        'assets/img/gallery/W_J002190-0143.jpg',
+        'assets/img/gallery/W_J002190-0149.jpg',
+        'assets/img/gallery/W_J002190-0158.jpg',
+        'assets/img/gallery/W_J002190-0170.jpg',
+        'assets/img/gallery/W_J002190-0173.jpg',
+        'assets/img/gallery/W_J002190-0179.jpg',
+        'assets/img/gallery/W_J002190-0183.jpg',
+        'assets/img/gallery/W_J002190-0188.jpg',
+        'assets/img/gallery/W_J002190-0203.jpg',
+        'assets/img/gallery/W_J002190-0215.jpg',
+        'assets/img/gallery/W_J002190-0222.jpg'
+    ]
+
+    //var $gallery = $('#gallery-container .photos');
+    //$gallery.gallerify();
+
+    //photos.map(function (photo) {
+    //    $gallery.append('<img src="' + photo + '">');
+    //});
+    //$('.photos').gallerify.renderAsyncImages();
+
+    setTimeout(function () {
+        $('.fotorama').fotorama();
+    }, 5000);
 });
