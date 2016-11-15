@@ -339,4 +339,11 @@ nav {
     background-size: 100% auto;
     background-position-x: 50%;
     background-position-y: 100%;}
+
+@media screen and (orientation: portrait) {
+    #story-container {
+        -webkit-background-size: auto 200%;
+        background-size: auto 200%;
+    }
+}
 /*story end*/
