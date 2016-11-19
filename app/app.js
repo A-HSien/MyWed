@@ -119,8 +119,8 @@
         triggerHook: "onEnter",
         duration: '250%',
     })
-        .setTween(TweenMax.to('#clock-container', 0.000001, {
-            css: { 'background-position-y': "50%" },
+        .setTween(TweenMax.to('#clock-background', 0.000001, {
+            css: { transform: 'translate3d(0px, 30%, 0px)' },
             ease: Linear.easeNone
         }))
         .addTo(scrollMagicController);
@@ -166,8 +166,8 @@
         triggerHook: "onEnter",
         duration: '250%',
     })
-        .setTween(TweenMax.to('#story-container', 0.000001, {
-            css: { 'background-position-y': "50%" },
+        .setTween(TweenMax.to('#story-background', 0.000001, {
+            css: { transform: 'translate3d(0px, 30%, 0px)' },
             ease: Linear.easeNone
         }))
         .addTo(scrollMagicController);
@@ -233,7 +233,7 @@
     //});
     //$('.photos').gallerify.renderAsyncImages();
 
-    setTimeout(function () {
-        $('.fotorama').fotorama();
-    }, 5000);
+    //setTimeout(function () {
+    //    $('.fotorama').fotorama();
+    //}, 5000);
 });
