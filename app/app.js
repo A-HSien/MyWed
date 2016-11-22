@@ -81,7 +81,7 @@
         this.secondsSpan = clock.querySelector('.seconds');
 
         this.updateClock();
-        this.timeinterval = setInterval(this.updateClock.bind(this), 300);
+        this.timeinterval = setInterval(this.updateClock.bind(this), 100);
     };
     CountdownClock.prototype.updateClock = function () {
         var t = this.getTimeRemaining(this.endtime);
@@ -117,10 +117,10 @@
     new ScrollMagic.Scene({
         triggerElement: '#announce',
         triggerHook: "onEnter",
-        duration: '250%',
+        duration: '280%',
     })
         .setTween(TweenMax.to('#clock-background', 0.000001, {
-            css: { transform: 'translate3d(0px, 30%, 0px)' },
+            css: { transform: 'translate3d(0px, 50%, 0px)' },
             ease: Linear.easeNone
         }))
         .addTo(scrollMagicController);
@@ -164,10 +164,10 @@
     new ScrollMagic.Scene({
         triggerElement: '#map-container',
         triggerHook: "onEnter",
-        duration: '250%',
+        duration: '260%',
     })
         .setTween(TweenMax.to('#story-background', 0.000001, {
-            css: { transform: 'translate3d(0px, 30%, 0px)' },
+            css: { transform: 'translate3d(0px, 50%, 0px)' },
             ease: Linear.easeNone
         }))
         .addTo(scrollMagicController);
