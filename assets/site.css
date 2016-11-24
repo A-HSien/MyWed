@@ -219,9 +219,9 @@ nav {
 
     #clock-container #clock-background {
         z-index: 0;
-        min-height: 150%;
+        min-height: 120%;
         min-width: 100%;
-        transform: translate3d(0px, -50%, 0px);
+        transform: translateY(-10%);
         background: url("./background/pexels-photo-169190.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
@@ -361,9 +361,9 @@ nav {
 
     #story-container #story-background {
         z-index: 0;
-        min-height: 150%;
+        min-height: 120%;
         min-width: 100%;
-        transform: translate3d(0px, -50%, 0px);
+        transform: translateY(-10%);
         background: url("./background/pexels-photo-169211.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;

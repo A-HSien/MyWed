@@ -115,15 +115,13 @@
 
 
     new ScrollMagic.Scene({
-        triggerElement: '#announce',
+        triggerElement: '#clock-container',
         triggerHook: "onEnter",
-        duration: '280%',
-    })
-        .setTween(TweenMax.to('#clock-background', 0.000001, {
-            css: { transform: 'translate3d(0px, 50%, 0px)' },
-            ease: Linear.easeNone
-        }))
-        .addTo(scrollMagicController);
+        duration: '200%',
+    }).setTween('#clock-background', {
+        css: { y: '10%' },
+        ease: Linear.easeNone
+    }).addTo(scrollMagicController);
 
 
 
@@ -162,16 +160,13 @@
      * story
      */
     new ScrollMagic.Scene({
-        triggerElement: '#map-container',
+        triggerElement: '#story-container',
         triggerHook: "onEnter",
-        duration: '260%',
-    })
-        .setTween(TweenMax.to('#story-background', 0.000001, {
-            css: { transform: 'translate3d(0px, 50%, 0px)' },
-            ease: Linear.easeNone
-        }))
-        .addTo(scrollMagicController);
-
+        duration: '200%',
+    }).setTween('#story-background', {
+        css: { y: '10%' },
+        ease: Linear.easeNone
+    }).addTo(scrollMagicController);
 
 
     /**
