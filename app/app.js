@@ -1,4 +1,7 @@
 ﻿$(function () {
+    
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
 
     var scrollMagicController = new ScrollMagic.Controller();
 
@@ -6,7 +9,9 @@
     /**
      * header
      */
-    var $header = $('header');
+    var $header = $('#header');
+
+    $header.height(windowHeight);
     var $video = $header.find('video');
     $video.on('ended', function () {
         $video.fadeOut();
@@ -24,11 +29,11 @@
 
     var headerAction = {
         imgScene: new ScrollMagic.Scene({
-            triggerElement: 'header img',
+            triggerElement: '#header img',
             duration: 1600,
             offset: 0
         }),
-        imgAction: TweenMax.to('header img', 0.5, {
+        imgAction: TweenMax.to('#header img', 0.5, {
             autoAlpha: 0,
             scale: 0.1,
             force3D: true
@@ -47,9 +52,9 @@
         .setTween(headerAction.imgAction)
         .addTo(scrollMagicController);
 
-    //headerAction.navScene
-    //    .setTween(headerAction.navAction)
-    //    .addTo(scrollMagicController);
+    headerAction.navScene
+        .setTween(headerAction.navAction)
+        .addTo(scrollMagicController);
 
 
 
@@ -119,7 +124,7 @@
         triggerHook: "onEnter",
         duration: '200%',
     }).setTween('#clock-background', {
-        css: { y: '10%' },
+        css: { y: '60%' },
         ease: Linear.easeNone
     }).addTo(scrollMagicController);
 
@@ -129,32 +134,50 @@
     /**
      * maps
      */
-    function initMap() {
-        var location = new google.maps.LatLng('24.984038', '121.5379173');
-        var mapOptions = {
-            zoom: 12, draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true, center: location,
-            styles: [{ "featureType": "landscape", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "stylers": [{ "saturation": -100 }, { "lightness": 51 }, { "visibility": "simplified" }] }, { "featureType": "road.highway", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "saturation": -100 }, { "lightness": 30 }, { "visibility": "on" }] }, { "featureType": "road.local", "stylers": [{ "saturation": -100 }, { "lightness": 40 }, { "visibility": "on" }] }, { "featureType": "transit", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "administrative.province", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": -25 }, { "saturation": -100 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }]
-        };
+    var location = '24.984038,121.5379173';
+    var styles = toStaticMapStyle([{ "stylers": [{ "hue": "#baf4c4" }, { "saturation": 10 }] }, { "featureType": "water", "stylers": [{ "color": "#effefd" }] }, { "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels", "stylers": [{ "visibility": "on" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }]);
 
-        var mapElement = $('.map')[0];
 
-        var map = new google.maps.Map(mapElement, mapOptions);
+    var mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?size=' + windowWidth + 'x350&scale=2&zoom=12&center=' + location +
+        '&style=' + styles + '&key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs';
 
-        //var marker = new google.maps.Marker({
-        //    position: location,
-        //    map: map,
-        //    title: '豪鼎飯店(北新店)'
-        //});
-        //var info = new google.maps.InfoWindow({
-        //    content:
-        //        '<a href="' +
-        //        'https://www.google.com.tw/maps/place/%E8%B1%AA%E9%BC%8E%E9%A3%AF%E5%BA%97+%E5%8C%97%E6%96%B0%E6%97%97%E8%89%A6%E9%A4%A8/@24.984038,121.5379173,17z/data=!3m1!4b1!4m5!3m4!1s0x346801fed70ad06d:0x2b2b0cae3db1b50c!8m2!3d24.984038!4d121.540106' +
-        //        '" target="_blank">豪鼎飯店(北新店)</a>'
-        //});
-        //info.open(map, marker);
-    };
-    google.maps.event.addDomListener(window, 'load', initMap);
+    $('.map').attr('src', mapUrl);
 
+    //var marker = new google.maps.Marker({
+    //    position: location,
+    //    map: map,
+    //    title: '豪鼎飯店(北新店)'
+    //});
+    //var info = new google.maps.InfoWindow({
+    //    content:
+    //        '<a href="' +
+    //        'https://www.google.com.tw/maps/place/%E8%B1%AA%E9%BC%8E%E9%A3%AF%E5%BA%97+%E5%8C%97%E6%96%B0%E6%97%97%E8%89%A6%E9%A4%A8/@24.984038,121.5379173,17z/data=!3m1!4b1!4m5!3m4!1s0x346801fed70ad06d:0x2b2b0cae3db1b50c!8m2!3d24.984038!4d121.540106' +
+    //        '" target="_blank">豪鼎飯店(北新店)</a>'
+    //});
+    //info.open(map, marker);
+    // https://maps.googleapis.com/maps/api/staticmap?size=512x512&zoom=15&center=Brooklyn&
+    // style=feature:road.local%7Celement:geometry%7Ccolor:0x00ff00%7Cweight:1%7Cvisibility:on&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0x000000%7Cvisibility:on&style=feature:administrative%7Celement:labels%7Cweight:3.9%7Cvisibility:on%7Cinverse_lightness:true&style=feature:poi%7Cvisibility:simplified&key=YOUR_API_KEY
+
+
+
+    function toStaticMapStyle(styles) {
+        var result = [];
+        styles.forEach(function (v, i, a) {
+            var style = '';
+            if (v.stylers.length > 0) { // Needs to have a style rule to be valid.
+                style += (v.hasOwnProperty('featureType') ? 'feature:' + v.featureType : 'feature:all') + '|';
+                style += (v.hasOwnProperty('elementType') ? 'element:' + v.elementType : 'element:all') + '|';
+                v.stylers.forEach(function (val, i, a) {
+                    var propertyname = Object.keys(val)[0];
+                    var propertyval = val[propertyname].toString().replace('#', '0x');
+                    style += propertyname + ':' + propertyval + '|';
+                });
+            }
+            result.push('style=' + encodeURIComponent(style))
+        });
+
+        return result.join('&');
+    }
 
     /**
      * story
@@ -164,7 +187,7 @@
         triggerHook: "onEnter",
         duration: '200%',
     }).setTween('#story-background', {
-        css: { y: '10%' },
+        css: { y: '60%' },
         ease: Linear.easeNone
     }).addTo(scrollMagicController);
 
