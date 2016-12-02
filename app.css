@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    background-image: url('./background/asanoha-400px.png');
+    background-image: url('./assets/background/asanoha-400px.png');
 }
 
 
@@ -82,9 +82,10 @@ section {
 }
 
     #header.img-background {
-        background: url("./img/header.jpg") no-repeat center center;
+        background: url("./assets/img/header.jpg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
+        opacity: 0.9;
     }
 
     #header i.fa-angle-double-down {
@@ -119,8 +120,9 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        min-height: 100%;
+        min-height: 125%;
         min-width: 100%;
+        opacity: 0.9;
     }
 
 /*@media screen and (orientation: portrait) {
@@ -231,7 +233,7 @@ nav {
         min-height: 120%;
         min-width: 100%;
         transform: translateY(-60%);
-        background: url("./background/pexels-photo-169190.jpeg") no-repeat center center;
+        background: url("./assets/background/pexels-photo-169190.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
     }
@@ -375,7 +377,7 @@ nav {
         min-height: 120%;
         min-width: 100%;
         transform: translateY(-60%);
-        background: url("./background/pexels-photo-169211.jpeg") no-repeat center center;
+        background: url("./assets/background/pexels-photo-169211.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
     }
