@@ -52,7 +52,7 @@
             force3D: true
         }),
         navScene: new ScrollMagic.Scene({
-            triggerElement: 'main',
+            triggerElement: '#wrapper',
             duration: 100,
             offset: 0
         }),
@@ -283,9 +283,9 @@
                 );
 
         // overwrite scroll position calculation to use child's offset instead of container's scrollTop();
-        scrollMagicController.scrollPos(function () {
-            return -myScroll.y;
-        });
+        //scrollMagicController.scrollPos(function () {
+        //    return -myScroll.y;
+        //});
 
         // thanks to iScroll 5 we now have a real onScroll event (with some performance drawbacks)
         myScroll.on("scroll", function () {
