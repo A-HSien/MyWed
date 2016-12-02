@@ -1,7 +1,7 @@
 ﻿$(function () {
 
     var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
+    //var windowHeight = $(window).height();
 
     var scrollMagicController = new ScrollMagic.Controller();
 
@@ -11,7 +11,7 @@
      */
     var $header = $('#header');
 
-    $header.height(windowHeight);
+    //$header.height(windowHeight);
 
     /* video*/
     var $video = $header.find('video');
