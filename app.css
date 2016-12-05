@@ -15,6 +15,10 @@ html, body {
     overflow-x: hidden;
 }
 
+    html.open-menu {
+        overflow-y: hidden;
+    }
+
 body {
     background-image: url('./assets/background/asanoha-400px.png');
 }
@@ -28,9 +32,9 @@ section {
 
 
 .animation {
-    -webkit-transition: all 800ms ease;
-    -moz-transition: all 800ms ease;
-    transition: all 800ms ease;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    transition: all 600ms ease;
 }
 
 
@@ -72,6 +76,65 @@ section {
 }
 
 
+/**
+ * menu area
+ */
+#menu {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.open-menu #menu {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, 0.9);
+}
+
+#menu .hamburger {
+    padding: 10px 0 0 15px;
+}
+
+#menu .menu-items {
+    display: none;
+}
+
+.open-menu #menu .menu-items {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+    width: 200px;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+    #menu ul > li {
+        line-height: 2.5rem;
+        font-size: 1.2rem;
+        color: #2e2e2e;
+    }
+
+@media screen and (max-width:768px ) {
+    #menu ul {
+        padding: 10px;
+    }
+
+        #menu ul > li {
+            font-size: 1.0rem;
+        }
+}
+/**
+ * menu area end
+ */
+
+
 /* header area */
 #header {
     height: 100vh;
@@ -104,14 +167,10 @@ section {
         color: #fff;
     }
 
-    #header img {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        width: 38%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
+    #header .logo-container {
+        height: 100%;
     }
+
 
     #header video {
         background-color: #fff;
@@ -125,56 +184,27 @@ section {
         opacity: 0.9;
     }
 
-/*@media screen and (orientation: portrait) {
-    header video {
+    #header .logo {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
     }
-}*/
 
-@media screen and (orientation: landscape) {
-    header video {
-        min-width: 100%;
-        /*zoom: 1.2;*/
+@media screen and (max-width:992px) {
+    #header .logo {
+        top: 45%;
     }
 }
-
 
 @media screen and (max-width:768px ) {
-    header img {
-        top: 75%;
-        width: 60%;
+    #header .logo {
+        top: 50%;
     }
 }
 
 
-
-nav {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-60%);
-    z-index: 1;
-    opacity: 0;
-}
-
-    nav > ul {
-        list-style: none;
-    }
-
-        nav > ul > li {
-            line-height: 2.5rem;
-            font-size: 1.2rem;
-            color: #2e2e2e;
-        }
-
-@media screen and (max-width:768px ) {
-    nav > ul {
-        padding: 10px;
-    }
-
-        nav > ul > li {
-            font-size: 1.0rem;
-        }
-}
 /*header end*/
 
 
