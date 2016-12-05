@@ -62,7 +62,7 @@
                 期待您加入我們的派對｡
             </div>
         </section>
-
+        <!--announce end-->
         <!--clock-container-->
         <section id="clock-container">
             <div id="clock-background"></div>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </section>
-
+        <!--clock-container end-->
         <!--map-container-->
         <section id="map-container" class="shadow">
             <div class="map-content">
@@ -96,8 +96,18 @@
             <div class="location-marker"><i class="fa fa-child fa-lg" aria-hidden="true"></i></div>
             <div class="location-marker location-marker-animation"></div>
             <img class="map">
-        </section>
+        </section>        
+        <!--map-container end-->
 
+        <!--gallery-container-->
+        <section id="gallery-container">
+            <div id="gallery-background"></div>
+
+            <img class="photo">
+            <div class="photos-container">
+                <div class="photos"></div>
+            </div>
+        </section>
         <section id="story-container" class="shadow">
             <div id="story-background"></div>
             <div id="story-content">
@@ -106,45 +116,95 @@
                 </h4>
                 <div style="height:300px;text-align:center">一些照片</div>
             </div>
-        </section>
+        </section>        
+        <!--gallery-container end-->
 
-        <!--<section class="fotorama" data-nav="thumbs" data-navposition="top" data-autoplay="true" data-loop="true" data-auto="false">
-            <a href="assets/img/gallery/W_J002190-0001.jpg" data-thumb="assets/img/thumbnail/W_J002190-0001.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0034.jpg" data-thumb="assets/img/thumbnail/W_J002190-0034.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0041.jpg" data-thumb="assets/img/thumbnail/W_J002190-0041.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0049.jpg" data-thumb="assets/img/thumbnail/W_J002190-0049.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0088.jpg" data-thumb="assets/img/thumbnail/W_J002190-0088.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0091.jpg" data-thumb="assets/img/thumbnail/W_J002190-0091.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0092.jpg" data-thumb="assets/img/thumbnail/W_J002190-0092.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0094.jpg" data-thumb="assets/img/thumbnail/W_J002190-0094.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0096.jpg" data-thumb="assets/img/thumbnail/W_J002190-0096.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0105.jpg" data-thumb="assets/img/thumbnail/W_J002190-0105.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0132.jpg" data-thumb="assets/img/thumbnail/W_J002190-0132.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0143.jpg" data-thumb="assets/img/thumbnail/W_J002190-0143.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0149.jpg" data-thumb="assets/img/thumbnail/W_J002190-0149.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0158.jpg" data-thumb="assets/img/thumbnail/W_J002190-0158.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0170.jpg" data-thumb="assets/img/thumbnail/W_J002190-0170.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0173.jpg" data-thumb="assets/img/thumbnail/W_J002190-0173.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0179.jpg" data-thumb="assets/img/thumbnail/W_J002190-0179.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0183.jpg" data-thumb="assets/img/thumbnail/W_J002190-0183.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0188.jpg" data-thumb="assets/img/thumbnail/W_J002190-0188.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0203.jpg" data-thumb="assets/img/thumbnail/W_J002190-0203.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0215.jpg" data-thumb="assets/img/thumbnail/W_J002190-0215.jpg"></a>
-            <a href="assets/img/gallery/W_J002190-0222.jpg" data-thumb="assets/img/thumbnail/W_J002190-0222.jpg"></a>
 
-        </section>-->
-        <!--<section id="form-container" class="shadow">
-            <div style="margin:0px auto;width:100%;height:1150px">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdyApTrs8srgo0MwY5WZ_yqbvnuezVA1T1jX4da0fP07jUWaA/viewform?embedded=true"
-                        width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">
-                    載入中…
-                </iframe>
+        <section id="form-container" class="shadow">
+            <h4 class="title">
+                我要參加
+            </h4>
+            <div class="form-content
+                 col-xs-12
+                 col-sm-10 offset-sm-1
+                 col-md-8 offset-md-2
+                 col-lg-6 offset-lg-3">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">該怎麼稱呼你?</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                </div>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是男方還是女方親友呢?</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="no" checked>
+                                男方
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="yes">
+                                女方
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是否要喜帖</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="no" checked>
+                                否
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="yes">
+                                是
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label">寄送喜帖的地址</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fone">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label">請留下找得到你的電話</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fone">
+                    </div>
+                </div>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是否吃素</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="no" checked>
+                                否
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="yes">
+                                是
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <div class="offset-sm-3 col-sm-9">
+                        <button type="submit" class="btn btn-primary">送出</button>
+                    </div>
+                </div>
             </div>
-        </section>-->
-        <!--<section id="gallery-container">
-
-            <div class="photos"></div>
-        </section>-->
+        </section>
 
     </div>
 
