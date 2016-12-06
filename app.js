@@ -22,6 +22,16 @@
         adjustMenuItems();
     });
 
+    $('#menu').on('click', 'ul > li', function ($event) {
+        $('html').toggleClass('open-menu');
+
+        var target = $($event.currentTarget).data('scrollTo');
+        var offsetTop = $(target).offset().top;
+        var currentOffsetTop = $(window).scrollTop();
+        var offset = Math.max(offsetTop, currentOffsetTop) - Math.min(offsetTop, currentOffsetTop);
+        $('html, body').animate({ scrollTop: offsetTop }, offset * 1.2);
+    });
+
     /**
      * header
      */
@@ -67,15 +77,15 @@
             scale: 0.1,
             force3D: true
         }),
-        navScene: new ScrollMagic.Scene({
-            triggerElement: '#wrapper',
-            duration: 100,
-            offset: 0
-        }),
-        navAction: TweenMax.to('nav', 1, {
-            autoAlpha: 1,
-            force3D: true
-        })
+        //navScene: new ScrollMagic.Scene({
+        //    triggerElement: '#wrapper',
+        //    duration: 100,
+        //    offset: 0
+        //}),
+        //navAction: TweenMax.to('nav', 1, {
+        //    autoAlpha: 1,
+        //    force3D: true
+        //})
     };
     headerAction.imgScene
         .setTween(headerAction.imgAction)
