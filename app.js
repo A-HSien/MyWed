@@ -227,19 +227,31 @@
         array.push($img);
         return array;
     }, []);
+
     $('#gallery-container .photos').width(102 * thumbnailPaths.length);
     $('#gallery-container .photos').html(thumbnailPaths);
 
-    var currentImgIndex = 0;
     var $photo = $('#gallery-container .photo');
+    var currentImgIndex = 0;
+
     var setImg = function () {
-        $photo.fadeOut(1000);
-        $photo.attr('src', galleryPath + photos[currentImgIndex]);
-        $photo.fadeIn(1000);
-        currentImgIndex++;
+        var img = new Image();
+        img.src = galleryPath + photos[currentImgIndex];
+        img.onload = function () {
+            $photo.css('background-image', 'url(' + img.src + ')');
+            TweenMax.to($photo, 2, { opacity: 1 });
+        };
     };
     setImg();
-    setInterval(setImg, 6000);
+
+    var resetImg = function () {
+        TweenMax.to($photo, 1, {
+            opacity: 0,
+            onComplete: setImg
+        });
+        currentImgIndex++;
+    };
+    setInterval(resetImg, 8000);
 
 
     new ScrollMagic.Scene({
@@ -247,7 +259,7 @@
         triggerHook: "onEnter",
         duration: '200%',
     }).setTween('#gallery-background', {
-        css: { y: '50%' },
+        css: { y: '60%' },
         ease: Linear.easeNone
     }).addTo(scrollMagicController);
 

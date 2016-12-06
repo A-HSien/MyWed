@@ -264,8 +264,8 @@ section {
     #clock-container #clock-background {
         position: absolute;
         z-index: -1;
-        min-height: 120%;
         min-width: 100%;
+        min-height: 120%;
         transform: translateY(-60%);
         background: url("./assets/background/pexels-photo-169190.jpeg") no-repeat center center;
         -webkit-background-size: cover;
@@ -395,8 +395,8 @@ section {
     #story-container #story-background {
         position: absolute;
         z-index: -1;
-        min-height: 120%;
         min-width: 100%;
+        min-height: 120%;
         transform: translateY(-60%);
         background: url("./assets/background/pexels-photo-169211.jpeg") no-repeat center center;
         -webkit-background-size: cover;
@@ -411,6 +411,10 @@ section {
 }
 /*story end*/
 
+
+/**
+ * form
+ */
 #form-container {
     background-image: url('./assets/background/asanoha-400px.png');
 }
@@ -420,6 +424,9 @@ section {
     }
 
 
+/**
+ * gallery
+ */
 #gallery-container {
     text-align: center;
 }
@@ -427,17 +434,23 @@ section {
 #gallery-background {
     position: absolute;
     z-index: -1;
-    min-height: 120%;
     min-width: 100%;
-    transform: translateY(-50%);
+    min-height: 120%;
+    transform: translateY(-60%);
     background: url("./assets/background/wedding-437969_1920.jpg") no-repeat center center;
     -webkit-background-size: cover;
     background-size: cover;
 }
 
 #gallery-container .photo {
-    margin-top: 30px;
-    height: 600px;
+    margin: 30px auto 0 auto;
+    max-width: 80%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    opacity: 0;
 }
 
 #gallery-container .photos-container {
