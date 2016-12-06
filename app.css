@@ -443,9 +443,9 @@ section {
 }
 
 #gallery-container .photo {
-    margin: 30px auto 0 auto;
+    margin: 20px auto 0 auto;
     max-width: 80%;
-    height: 500px;
+    height: 380px;
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: contain;
@@ -454,7 +454,7 @@ section {
 }
 
 #gallery-container .photos-container {
-    margin: 30px;
+    margin: 10px 20px 20px 20px;
     overflow-x: auto;
     overflow-Y: hidden;
 }
