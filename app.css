@@ -175,7 +175,7 @@ section {
     }
 
 
-    #header video {
+    #header #video {
         background-color: #fff;
         z-index: -1;
         position: absolute;

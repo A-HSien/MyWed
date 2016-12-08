@@ -36,9 +36,10 @@
 
     <div id="wrapper">
         <section id="header" class="img-background">
-            <video muted preload="metadata" playsinline webkit-playsinline>
+            <!--<video muted preload="metadata" playsinline webkit-playsinline>
                 <source src="assets/video/forest.mp4" type="video/mp4" />
-            </video>
+            </video>-->
+            <div id="video"></div>
             <div class="js-hideOnPlay logo-container
                  col-xs-12
                  col-sm-10 offset-sm-1
@@ -63,8 +64,6 @@
             </div>
         </section>
         <!--announce end-->
-
-
         <!--clock-container-->
         <section id="clock-container">
             <div id="clock-background"></div>
@@ -88,8 +87,6 @@
             </div>
         </section>
         <!--clock-container end-->
-
-
         <!--map-container-->
         <section id="map-container" class="shadow">
             <div class="map-content">
@@ -100,10 +97,8 @@
             <div class="location-marker"><i class="fa fa-child fa-lg" aria-hidden="true"></i></div>
             <div class="location-marker location-marker-animation"></div>
             <img class="map">
-        </section>        
+        </section>
         <!--map-container end-->
-
-
         <!--gallery-container-->
         <section id="gallery-container">
             <div id="gallery-background"></div>
@@ -112,9 +107,8 @@
             <div class="photos-container">
                 <div class="photos"></div>
             </div>
-        </section>      
+        </section>
         <!--gallery-container end-->
-        
         <!--story-container-->
         <section id="story-container" class="shadow">
             <div id="story-background"></div>
@@ -124,7 +118,7 @@
                 </h4>
                 <div style="height:300px;text-align:center">一些照片</div>
             </div>
-        </section>        
+        </section>
         <!--gallery-container end-->
 
 
@@ -216,12 +210,10 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
-            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.bootcss.com/iScroll/5.1.1/iscroll-probe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>

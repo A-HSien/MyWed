@@ -40,29 +40,60 @@
     //$header.height(windowHeight);
 
     /* video*/
-    var $video = $header.find('video');
-    $video.fadeOut();
-    $video.on('ended', function () {
-        $video.fadeOut();
-        $header.addClass('img-background');
-        setTimeout(function () {
-            $header.removeClass('img-background');
-            $video[0].play();
-        }, 3000);
-    });
-    $video.on('play', function () {
-        $video.fadeIn(2000);
-        $header.removeClass('img-background');
-    });
-    var timeForCheck = new Date();
-    $video.on('loadeddata', function () {
-        var timeForTimeout = 3000 - (new Date() - timeForCheck);
-        setTimeout(function () {
-            $video[0].play();
-            delete timeForCheck;
-            delete timeForTimeout;
-        }, timeForTimeout);
-    });
+    var videoEle = document.getElementById('video');
+    var renderer = PIXI.autoDetectRenderer(videoEle.clientWidth, videoEle.clientHeight, { transparent: true });
+    videoEle.appendChild(renderer.view);
+
+    // create the root of the scene graph
+    var stage = new PIXI.Container();
+
+    // create a video texture from a path
+    var texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
+    texture.baseTexture.source.loop = true;
+
+    // create a new Sprite using the video texture (yes it's that easy)
+    var videoSprite = new PIXI.Sprite(texture);
+
+    videoSprite.width = renderer.width;
+    videoSprite.height = renderer.height;
+
+    stage.addChild(videoSprite);
+
+    animate();
+
+    function animate() {
+
+        // render the stage
+        renderer.render(stage);
+
+        requestAnimationFrame(animate);
+    }
+
+
+
+    //var $video = $header.find('video');
+    //$video.fadeOut();
+    //$video.on('ended', function () {
+    //    $video.fadeOut();
+    //    $header.addClass('img-background');
+    //    setTimeout(function () {
+    //        $header.removeClass('img-background');
+    //        $video[0].play();
+    //    }, 3000);
+    //});
+    //$video.on('play', function () {
+    //    $video.fadeIn(2000);
+    //    $header.removeClass('img-background');
+    //});
+    //var timeForCheck = new Date();
+    //$video.on('loadeddata', function () {
+    //    var timeForTimeout = 3000 - (new Date() - timeForCheck);
+    //    setTimeout(function () {
+    //        $video[0].play();
+    //        delete timeForCheck;
+    //        delete timeForTimeout;
+    //    }, timeForTimeout);
+    //});
     /* video end*/
 
 
