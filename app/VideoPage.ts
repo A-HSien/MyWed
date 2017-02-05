@@ -1,7 +1,7 @@
 ﻿declare const $: any;
 declare const ScrollMagic: any;
-declare const PIXI: any;
 declare const TweenMax: any;
+declare const PIXI: any;
 
 
 export class VideoPage {
