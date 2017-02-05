@@ -12,6 +12,14 @@ export class AnnouncePage {
         scrollMagicController: any
     ) {
 
+        this.setSelfiePortrait(scrollMagicController);
+        this.setCountdownClock();
+        this.setMap(windowWidth);
+        this.setBackgroundTween(scrollMagicController)
+    };
+
+
+    private setSelfiePortrait(scrollMagicController: any) {
         new ScrollMagic.Scene({
             triggerElement: '#announce'
         }).setTween(TweenMax.to('#announce .selfie-left', 1, { css: { 'left': "30%" } }))
@@ -20,59 +28,51 @@ export class AnnouncePage {
             triggerElement: '#announce'
         }).setTween(TweenMax.to('#announce .selfie-right', 1, { css: { 'left': "70%" } }))
             .addTo(scrollMagicController);
+    };
 
-
-        /** 
-         * 倒數計時
-         */
+    private setCountdownClock() {
         var deadline = new Date(2017, 6 - 1, 3); //2017-6-3
         new CountdownClock('clockdiv', deadline);
+    };
 
-
+    private setBackgroundTween(scrollMagicController: any){
         new ScrollMagic.Scene({
-            triggerElement: '#clock-container',
+            triggerElement: '#announce',
             triggerHook: "onEnter",
             duration: '200%',
-        }).setTween('#clock-background', {
-            css: { y: '60%' },
+        }).setTween('#announce-background', {
+            css: { y: '10%' },
             ease: Linear.easeNone
         }).addTo(scrollMagicController);
+    };
+
+    private setMap(windowWidth: number) {
+        const location = '24.984038,121.5379173';
+        const size = windowWidth;
+        const styles = this.toStaticMapStyle([{ "stylers": [{ "hue": "#baf4c4" }, { "saturation": 10 }] }, { "featureType": "water", "stylers": [{ "color": "#effefd" }] }, { "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels", "stylers": [{ "visibility": "on" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }]);
 
 
-
-
-        /**
-         * maps
-         */
-        var location = '24.984038,121.5379173';
-        var styles = toStaticMapStyle([{ "stylers": [{ "hue": "#baf4c4" }, { "saturation": 10 }] }, { "featureType": "water", "stylers": [{ "color": "#effefd" }] }, { "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels", "stylers": [{ "visibility": "on" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }]);
-
-
-        var mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?size=' + windowWidth + 'x350&scale=2&zoom=12&center=' + location +
-            '&style=' + styles + '&key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs';
+        var mapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=${size}x350&scale=2&zoom=12&center=${location}&style=${styles}&key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs`;
 
         $('.map').attr('src', mapUrl);
+    };
 
-
-        function toStaticMapStyle(styles) {
-            var result = [];
-            styles.forEach(function (v, i, a) {
-                var style = '';
-                if (v.stylers.length > 0) { // Needs to have a style rule to be valid.
-                    style += (v.hasOwnProperty('featureType') ? 'feature:' + v.featureType : 'feature:all') + '|';
-                    style += (v.hasOwnProperty('elementType') ? 'element:' + v.elementType : 'element:all') + '|';
-                    v.stylers.forEach(function (val, i, a) {
-                        var propertyname = Object.keys(val)[0];
-                        var propertyval = val[propertyname].toString().replace('#', '0x');
-                        style += propertyname + ':' + propertyval + '|';
-                    });
-                }
-                result.push('style=' + encodeURIComponent(style))
-            });
-            return result.join('&');
-        }
-
-
+    private toStaticMapStyle(styles) {
+        var result = [];
+        styles.forEach(function (v, i, a) {
+            var style = '';
+            if (v.stylers.length > 0) { // Needs to have a style rule to be valid.
+                style += (v.hasOwnProperty('featureType') ? 'feature:' + v.featureType : 'feature:all') + '|';
+                style += (v.hasOwnProperty('elementType') ? 'element:' + v.elementType : 'element:all') + '|';
+                v.stylers.forEach(function (val, i, a) {
+                    var propertyname = Object.keys(val)[0];
+                    var propertyval = val[propertyname].toString().replace('#', '0x');
+                    style += propertyname + ':' + propertyval + '|';
+                });
+            }
+            result.push('style=' + encodeURIComponent(style))
+        });
+        return result.join('&');
     };
 };
 
