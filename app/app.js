@@ -5,32 +5,7 @@
 
     var scrollMagicController = new ScrollMagic.Controller();
 
-    /**
-     * 選單
-     */
-    var adjustMenuItems = function () {
-        $menuItems = $('#menu .menu-items');
-        if (windowHeight > $menuItems.height()) {
-            $menuItems.css('top', (windowHeight - $menuItems.height()) / 2);
-        } else {
-            $menuItems.height(windowHeight);
-        }
-    };
 
-    $('#menu .hamburger').on('click', function () {
-        $('html').toggleClass('open-menu');
-        adjustMenuItems();
-    });
-
-    $('#menu').on('click', 'ul > li', function ($event) {
-        $('html').toggleClass('open-menu');
-
-        var target = $($event.currentTarget).data('scrollTo');
-        var offsetTop = $(target).offset().top;
-        var currentOffsetTop = $(window).scrollTop();
-        var offset = Math.max(offsetTop, currentOffsetTop) - Math.min(offsetTop, currentOffsetTop);
-        $('html, body').animate({ scrollTop: offsetTop }, offset * 1.2);
-    });
 
     /**
      * header
@@ -47,21 +22,21 @@
     // create the root of the scene graph
     var stage = new PIXI.Container();
 
-    // create a video texture from a path
-    var texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
-    texture.baseTexture.source.loop = true;
-
-    // create a new Sprite using the video texture (yes it's that easy)
-    var videoSprite = new PIXI.Sprite(texture);
-
-    videoSprite.width = renderer.width;
-    videoSprite.height = renderer.height;
-
-    stage.addChild(videoSprite);
 
     animate();
 
     function animate() {
+        // create a video texture from a path
+        var texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
+        texture.baseTexture.source.loop = true;
+
+        // create a new Sprite using the video texture (yes it's that easy)
+        var videoSprite = new PIXI.Sprite(texture);
+
+        videoSprite.width = renderer.width;
+        videoSprite.height = renderer.height;
+
+        stage.addChild(videoSprite);
 
         // render the stage
         renderer.render(stage);

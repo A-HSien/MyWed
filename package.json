@@ -1,25 +1,17 @@
 {
-  "name": "projection-lab",
+  "name": "my-wed",
   "version": "0.0.1",
   "description": "",
   "main": "index.html",
   "scripts": {
-    "serve": "lite-server"
+    "serve": "lite-server",
+    "tsc": "tsc"
   },
   "devDependencies": {
-    "lite-server": "^2.2.0"
+    "lite-server": "^2.2.0",
+    "typescript": "~2.0.10",
+    "systemjs": "^0.19.41"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/A-hsien/ProjectionLab.git"
-  },
-  "keywords": [
-    "pixi.js"
-  ],
   "author": "a-hsien",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/A-hsien/ProjectionLab/issues"
-  },
-  "homepage": "https://github.com/A-hsien/ProjectionLab#readme"
+  "license": "ISC"
 }

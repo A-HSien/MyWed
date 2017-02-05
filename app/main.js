@@ -1,0 +1,9 @@
+"use strict";
+var Menu_1 = require('./Menu');
+var VideoPage_1 = require('./VideoPage');
+var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+var scrollMagicController = new ScrollMagic.Controller();
+new Menu_1.Menu(windowHeight);
+new VideoPage_1.VideoPage(scrollMagicController);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUVBLHFCQUFxQixRQUFRLENBQUMsQ0FBQTtBQUM5QiwwQkFBMEIsYUFBYSxDQUFDLENBQUE7QUFHeEMsSUFBTSxXQUFXLEdBQUcsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxDQUFDLEtBQUssRUFBWSxDQUFDO0FBQ2hELElBQU0sWUFBWSxHQUFHLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxNQUFNLEVBQVksQ0FBQztBQUNsRCxJQUFJLHFCQUFxQixHQUFHLElBQUksV0FBVyxDQUFDLFVBQVUsRUFBRSxDQUFDO0FBRXpELElBQUksV0FBSSxDQUFDLFlBQVksQ0FBQyxDQUFDO0FBQ3ZCLElBQUkscUJBQVMsQ0FBQyxxQkFBcUIsQ0FBQyxDQUFDIn0=

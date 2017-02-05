@@ -148,7 +148,7 @@ section {
 }
 
     #header.img-background {
-        background: url("./assets/img/header.jpg") no-repeat center center;
+        background: url("./img/header.jpg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
         opacity: 0.9;
@@ -218,7 +218,7 @@ section {
 #announce {
     z-index: 1;
     height: 420px;
-    background-image: url('./assets/background/asanoha-400px.png');
+    background-image: url('./background/asanoha-400px.png');
 }
 
     #announce .selfie {
@@ -258,7 +258,7 @@ section {
 
 
 
-/*倒數計時*/
+/*嚙誼數計嚙踝蕭*/
 #clock-container {
     overflow: hidden;
 }
@@ -269,7 +269,7 @@ section {
         min-width: 100%;
         min-height: 120%;
         transform: translateY(-60%);
-        background: url("./assets/background/pexels-photo-169190.jpeg") no-repeat center center;
+        background: url("./background/pexels-photo-169190.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
     }
@@ -323,7 +323,7 @@ section {
             padding: 5px;
         }
 }
-/*倒數計時 end*/
+/*嚙誼數計嚙踝蕭 end*/
 
 
 
@@ -400,7 +400,7 @@ section {
         min-width: 100%;
         min-height: 120%;
         transform: translateY(-60%);
-        background: url("./assets/background/pexels-photo-169211.jpeg") no-repeat center center;
+        background: url("./background/pexels-photo-169211.jpeg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
     }
@@ -418,7 +418,7 @@ section {
  * form
  */
 #form-container {
-    background-image: url('./assets/background/asanoha-400px.png');
+    background-image: url('./background/asanoha-400px.png');
 }
 
     #form-container .title {
