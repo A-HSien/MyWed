@@ -3,21 +3,49 @@ declare const ScrollMagic: any;
 declare const TweenMax: any;
 declare const PIXI: any;
 
+enum SectionState {
+    Inside,
+    Outside,
+};
 
 export class VideoPage {
 
+    private sectionState: SectionState = SectionState.Inside;
+
     constructor(
-        scrollMagicController: any
+        scrollMagicController: any,
+        windowHeight: number,
+        windowWidth: number
     ) {
+        this.monitorSectionState(scrollMagicController, windowHeight);
         this.playVideo();
-        this.setTweenForImage(scrollMagicController);
+        this.setTweenForImageIcon(scrollMagicController, windowHeight);
     };
 
-    private playVideo() {
-        /** header */
-        //$header = $('#header');
 
-        //$header.height(windowHeight);
+    private monitorSectionState(scrollMagicController: any, windowHeight: number) {
+
+        const sectionName = '#header';
+
+        new ScrollMagic.Scene({
+            triggerElement: sectionName,
+            duration: windowHeight + $(sectionName).height(),
+            offset: 0
+        })
+            .addTo(scrollMagicController)
+            .on("enter leave", e => {
+                if (e.type === "enter") {
+                    this.sectionState = SectionState.Inside;
+                    this.playVideo();
+                } else {
+                    this.sectionState = SectionState.Outside;
+                }
+                // console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
+            });
+    };
+
+
+    private playVideo() {
 
         /** video */
         const videoEle = document.getElementById('video');
@@ -29,7 +57,6 @@ export class VideoPage {
         // create a video texture from a path
         const texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
         const videoSource = texture.baseTexture.source;
-        // texture.baseTexture.source.loop = true;
 
         // create a new Sprite using the video texture
         const videoSprite = new PIXI.Sprite(texture);
@@ -42,49 +69,38 @@ export class VideoPage {
 
         $(videoEle).fadeIn(2000);
         $('#header').removeClass('img-background');
-        animate();
 
-        function animate() {
+        let animate = () => {
+            renderer.render(stage);
+
             if (videoSource.ended) {
                 $(videoEle).fadeOut(2000);
                 $('#header').addClass('img-background');
                 return;
             }
+            if (this.sectionState === SectionState.Outside) {
+                videoSource.pause();
+                return;
+            }
 
-            renderer.render(stage);
             requestAnimationFrame(animate);
-        }
+        };
+        animate();
     };
 
-    private setTweenForImage(scrollMagicController: any) {
 
-        var headerAction = {
-            imgScene: new ScrollMagic.Scene({
-                triggerElement: '#header img',
-                duration: 1600,
-                offset: 0
-            }),
-            imgAction: TweenMax.to('#header img', 1, {
+    private setTweenForImageIcon(scrollMagicController: any, windowHeight: number) {
+
+        new ScrollMagic.Scene({
+            triggerElement: '#header img',
+            duration: windowHeight,
+            offset: 0
+        })
+            .setTween(TweenMax.to('#header img', 1, {
                 autoAlpha: 0,
-                scale: 0.1,
+                scale: 0.5,
                 force3D: true
-            }),
-            //navScene: new ScrollMagic.Scene({
-            //    triggerElement: '#wrapper',
-            //    duration: 100,
-            //    offset: 0
-            //}),
-            //navAction: TweenMax.to('nav', 1, {
-            //    autoAlpha: 1,
-            //    force3D: true
-            //})
-        };
-        headerAction.imgScene
-            .setTween(headerAction.imgAction)
+            }))
             .addTo(scrollMagicController);
-
-        //headerAction.navScene
-        //    .setTween(headerAction.navAction)
-        //    .addTo(scrollMagicController);
     };
 };

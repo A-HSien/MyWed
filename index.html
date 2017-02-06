@@ -14,9 +14,9 @@
     <title>MyWed</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj"
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" href="./assets/app.css">
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/app.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <div class="menu-items">
             <ul>
                 <li data-scroll-to="#announce"><i class="fa fa-heart"></i> 宴客資訊</li>
-                <li data-scroll-to="#gallery-container"><i class="fa fa-magic"></i> 婚攝照片</li>
+                <li data-scroll-to="#gallery"><i class="fa fa-magic"></i> 婚攝照片</li>
                 <li data-scroll-to="#story-container"><i class="fa fa-heart"></i> 我們的日常</li>
                 <li data-scroll-to="#form-container"><i class="fa fa-magic"></i> 我要參加</li>
             </ul>
@@ -46,178 +46,174 @@
                  col-md-8 offset-md-2
                  col-lg-6 offset-lg-3">
                 <img class="logo" src="assets/img/LOGO.png">
-    </div>
-    <i class="fa fa-angle-double-down js-hideOnPlay"></i>
-    </section>
-    <!--header end-->
+            </div>
+            <i class="fa fa-angle-double-down js-hideOnPlay"></i>
+        </section>
+        <!--header end-->
+        <!--announce-->
+        <section id="announce" class="shadow">
+            <div id="announce-background"></div>
+            <img src="assets/img/ahsien.jpg" class="selfie selfie-left">
+            <img src="assets/img/sha.jpg" class="selfie selfie-right">
+            <div class="content">
+                <h3 class="title">我們要結婚囉!</h3><br> 重要的一天即將到來,
+                <br> 期待您加入我們的派對｡
+            </div>
+            <div id="clockdiv">
+                <div>
+                    <span class="days"></span>
+                    <div class="smalltext">Days</div>
+                </div>
+                <div>
+                    <span class="hours"></span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div>
+            <div id="map-container">
+                <div class="map-content">
+                    <h4 class="title">
+                        豪鼎飯店(北新店) 7點入席
+                    </h4>
+                </div>
+                <div class="location-marker"><i class="fa fa-child fa-lg" aria-hidden="true"></i></div>
+                <div class="location-marker location-marker-animation"></div>
+                <img class="map">
+            </div>
+        </section>
+        <!--announce end-->
+        <!--gallery-->
+        <section id="gallery">
+            <div id="gallery-background"></div>
 
-    <!--announce-->
-    <section id="announce" class="shadow">
-        <div id="announce-background"></div>
-        <img src="assets/img/ahsien.jpg" class="selfie selfie-left">
-        <img src="assets/img/sha.jpg" class="selfie selfie-right">
-        <div class="content">
-            <h3 class="title">我們要結婚囉!</h3><br> 重要的一天即將到來,
-            <br> 期待您加入我們的派對｡
-        </div>
-        <div id="clockdiv">
-            <div>
-                <span class="days"></span>
-                <div class="smalltext">Days</div>
+            <div class="photo"></div>
+            <div class="photos-container">
+                <div class="photos"></div>
             </div>
-            <div>
-                <span class="hours"></span>
-                <div class="smalltext">Hours</div>
-            </div>
-            <div>
-                <span class="minutes"></span>
-                <div class="smalltext">Minutes</div>
-            </div>
-            <div>
-                <span class="seconds"></span>
-                <div class="smalltext">Seconds</div>
-            </div>
-        </div>
-        <div id="map-container">
-            <div class="map-content">
-                <h4 class="title">
-                    豪鼎飯店(北新店) 7點入席
+        </section>
+        <!--gallery end-->
+        <!--story-->
+        <section id="story-container" class="shadow">
+            <div id="story-background"></div>
+            <div id="story-content">
+                <h4 class="title" style="padding:60px 0">
+                    回憶時刻
                 </h4>
+                <div style="height:300px;text-align:center">一些照片</div>
             </div>
-            <div class="location-marker"><i class="fa fa-child fa-lg" aria-hidden="true"></i></div>
-            <div class="location-marker location-marker-animation"></div>
-            <img class="map">
-        </div>
-    </section>
-    <!--announce end-->
-
-    <!--gallery-->
-    <section id="gallery-container">
-        <div id="gallery-background"></div>
-
-        <div class="photo"></div>
-        <div class="photos-container">
-            <div class="photos"></div>
-        </div>
-    </section>
-    <!--gallery end-->
-
-    <!--story-->
-    <section id="story-container" class="shadow">
-        <div id="story-background"></div>
-        <div id="story-content">
-            <h4 class="title" style="padding:60px 0">
-                回憶時刻
+        </section>
+        <!--story end-->
+        <!--form-->
+        <section id="form-container">
+            <h4 class="title">
+                我要參加
             </h4>
-            <div style="height:300px;text-align:center">一些照片</div>
-        </div>
-    </section>
-    <!--story end-->
-
-    <!--form-->
-    <section id="form-container">
-        <h4 class="title">
-            我要參加
-        </h4>
-        <div class="form-content
+            <div class="form-content
                  col-xs-12
                  col-sm-10 offset-sm-1
                  col-md-8 offset-md-2
                  col-lg-6 offset-lg-3">
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-3 col-form-label">該怎麼稱呼你?</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="name">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">該怎麼稱呼你?</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name">
+                    </div>
                 </div>
-            </div>
-            <fieldset class="form-group row">
-                <legend class="col-form-legend col-sm-3">是男方還是女方親友呢?</legend>
-                <div class="col-sm-9">
-                    <div class="form-check">
-                        <label class="form-check-label">
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是男方還是女方親友呢?</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="no" checked>
                                 男方
                             </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="yes">
                                 女方
                             </label>
+                        </div>
                     </div>
-                </div>
-            </fieldset>
-            <fieldset class="form-group row">
-                <legend class="col-form-legend col-sm-3">是否要喜帖</legend>
-                <div class="col-sm-9">
-                    <div class="form-check">
-                        <label class="form-check-label">
+                </fieldset>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是否要喜帖</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="no" checked>
                                 否
                             </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="yes">
                                 是
                             </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label">寄送喜帖的地址</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fone">
                     </div>
                 </div>
-            </fieldset>
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-3 col-form-label">寄送喜帖的地址</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fone">
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label">請留下找得到你的電話</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fone">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-3 col-form-label">請留下找得到你的電話</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fone">
-                </div>
-            </div>
-            <fieldset class="form-group row">
-                <legend class="col-form-legend col-sm-3">是否吃素</legend>
-                <div class="col-sm-9">
-                    <div class="form-check">
-                        <label class="form-check-label">
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">是否吃素</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="no" checked>
                                 否
                             </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="yes">
                                 是
                             </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <div class="offset-sm-3 col-sm-9">
+                        <button type="submit" class="btn btn-primary">送出</button>
                     </div>
                 </div>
-            </fieldset>
-            <div class="form-group row">
-                <div class="offset-sm-3 col-sm-9">
-                    <button type="submit" class="btn btn-primary">送出</button>
-                </div>
             </div>
-            </div>
-    </section>
-    <!--form end-->
+        </section>
+        <!--form end-->
 
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
             crossorigin="anonymous"></script>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-            <script src="assets/system.src.js"></script>
-            <script src="assets/systemjs.config.js"></script>
-            <script>
-                System.import('app').catch(function (err) { conror(err); });
-            </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="assets/system.src.js"></script>
+    <script src="assets/systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) { conror(err); });
+    </script>
 
 </body>
 

@@ -8,14 +8,15 @@ declare const Linear: any;
 export class AnnouncePage {
 
     constructor(
-        windowWidth: number,
-        scrollMagicController: any
+        scrollMagicController: any,
+        windowHeight: number,
+        windowWidth: number
     ) {
 
         this.setSelfiePortrait(scrollMagicController);
         this.setCountdownClock();
         this.setMap(windowWidth);
-        this.setBackgroundTween(scrollMagicController)
+        this.setBackgroundTween(windowHeight, scrollMagicController)
     };
 
 
@@ -35,15 +36,26 @@ export class AnnouncePage {
         new CountdownClock('clockdiv', deadline);
     };
 
-    private setBackgroundTween(scrollMagicController: any){
+    private setBackgroundTween(
+        windowHeight: number,
+        scrollMagicController: any
+    ) {
+        const sectionName = '#announce';
+
         new ScrollMagic.Scene({
-            triggerElement: '#announce',
+            triggerElement: sectionName,
             triggerHook: "onEnter",
-            duration: '200%',
-        }).setTween('#announce-background', {
-            css: { y: '10%' },
-            ease: Linear.easeNone
-        }).addTo(scrollMagicController);
+            duration: windowHeight + $(sectionName).height(),
+            offset: 0
+        })
+            .setTween('#announce-background', {
+                css: { y: '0%' },
+                ease: Linear.easeNone
+            })
+            .addTo(scrollMagicController)
+            .on("enter leave", e => {
+                console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
+            });
     };
 
     private setMap(windowWidth: number) {

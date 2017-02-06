@@ -12,7 +12,7 @@ const windowHeight = $(window).height() as number;
 let scrollMagicController = new ScrollMagic.Controller();
 
 new Menu(windowHeight);
-new VideoPage(scrollMagicController);
-new AnnouncePage(windowWidth, scrollMagicController);
-new GalleryPage(scrollMagicController);
-new StoryPage(scrollMagicController);
+new VideoPage(scrollMagicController, windowHeight, windowWidth);
+new AnnouncePage(scrollMagicController, windowHeight, windowWidth);
+new GalleryPage(scrollMagicController, windowHeight, windowWidth);
+new StoryPage(scrollMagicController, windowHeight, windowWidth);

@@ -6,14 +6,24 @@ declare const Linear: any;
 
 export class StoryPage {
 
-    constructor(scrollMagicController: any) {
+    constructor(
+        scrollMagicController: any,
+        windowHeight: number,
+        windowWidth: number
+    ) {
+
+        const sectionName = '#story-container';
+
         new ScrollMagic.Scene({
-            triggerElement: '#story-container',
+            triggerElement: sectionName,
             triggerHook: "onEnter",
-            duration: '200%',
+            duration: windowHeight + $(sectionName).height(),
         }).setTween('#story-background', {
-            css: { y: '60%' },
+            css: { y: '0%' },
             ease: Linear.easeNone
-        }).addTo(scrollMagicController);
+        }).addTo(scrollMagicController)
+            .on("enter leave", e => {
+                console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
+            });
     };
 };

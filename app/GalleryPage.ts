@@ -6,7 +6,11 @@ declare const Linear: any;
 
 export class GalleryPage {
 
-    constructor(scrollMagicController: any) {
+    constructor(
+        scrollMagicController: any,
+        windowHeight: number,
+        windowWidth: number
+    ) {
         var thumbnailPath = 'assets/img/thumbnail/';
         var galleryPath = 'assets/img/gallery/';
 
@@ -25,10 +29,10 @@ export class GalleryPage {
             return array;
         }, []);
 
-        $('#gallery-container .photos').width(102 * thumbnailPaths.length);
-        $('#gallery-container .photos').html(thumbnailPaths);
+        $('#gallery .photos').width(102 * thumbnailPaths.length);
+        $('#gallery .photos').html(thumbnailPaths);
 
-        var $photo = $('#gallery-container .photo');
+        var $photo = $('#gallery .photo');
         var currentImgIndex = 0;
 
         var setImg = function () {
@@ -51,13 +55,20 @@ export class GalleryPage {
         setInterval(resetImg, 8000);
 
 
+        const sectionName = '#gallery';
+
         new ScrollMagic.Scene({
-            triggerElement: '#gallery-container',
+            triggerElement: sectionName,
             triggerHook: "onEnter",
-            duration: '200%',
-        }).setTween('#gallery-background', {
-            css: { y: '60%' },
-            ease: Linear.easeNone
-        }).addTo(scrollMagicController);
+            duration: windowHeight + $(sectionName).height(),
+        })
+            .setTween('#gallery-background', {
+                css: { y: '0%' },
+                ease: Linear.easeNone
+            })
+            .addTo(scrollMagicController)
+            .on("enter leave", e => {
+                console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
+            });
     };
 };
