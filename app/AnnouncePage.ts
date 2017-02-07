@@ -54,7 +54,6 @@ export class AnnouncePage {
             })
             .addTo(scrollMagicController)
             .on("enter leave", e => {
-                console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
             });
     };
 

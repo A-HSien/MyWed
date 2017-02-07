@@ -3,10 +3,8 @@ declare const ScrollMagic: any;
 declare const TweenMax: any;
 declare const PIXI: any;
 
-enum SectionState {
-    Inside,
-    Outside,
-};
+import {SectionState} from './SectionState.enum';
+
 
 export class VideoPage {
 
@@ -18,8 +16,7 @@ export class VideoPage {
         windowWidth: number
     ) {
         this.monitorSectionState(scrollMagicController, windowHeight);
-        this.playVideo();
-        this.setTweenForImageIcon(scrollMagicController, windowHeight);
+        //this.setTweenForImageIcon(scrollMagicController, windowHeight);
     };
 
 
@@ -40,7 +37,6 @@ export class VideoPage {
                 } else {
                     this.sectionState = SectionState.Outside;
                 }
-                // console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
             });
     };
 
@@ -73,20 +69,39 @@ export class VideoPage {
         let animate = () => {
             renderer.render(stage);
 
-            if (videoSource.ended) {
+            
+            if (videoSource.ended && videoSource.paused) {
+                stage.destroy();
+                videoSprite.destroy();
+                renderer.destroy();
+
                 $(videoEle).fadeOut(2000);
                 $('#header').addClass('img-background');
+                
                 return;
             }
             if (this.sectionState === SectionState.Outside) {
                 videoSource.pause();
+
+                stage.destroy();
+                videoSprite.destroy();
+                renderer.destroy();
+                
                 return;
             }
 
             requestAnimationFrame(animate);
         };
+        //videoSource.onended = (() => animate());
         animate();
+
     };
+
+
+    //private initAnimate() {
+    //    $(videoEle).fadeIn(2000);
+    //    $('#header').removeClass('img-background');
+    //};
 
 
     private setTweenForImageIcon(scrollMagicController: any, windowHeight: number) {

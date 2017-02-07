@@ -23,7 +23,6 @@ export class StoryPage {
             ease: Linear.easeNone
         }).addTo(scrollMagicController)
             .on("enter leave", e => {
-                console.log(e.type == "enter" ? `inside ${sectionName}` : `outside ${sectionName}`);
             });
     };
 };
