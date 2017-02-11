@@ -16,6 +16,7 @@ export class VideoPage {
         windowWidth: number
     ) {
         this.monitorSectionState(scrollMagicController, windowHeight);
+        this.setVideo();
         //this.setTweenForImageIcon(scrollMagicController, windowHeight);
     };
 
@@ -26,8 +27,8 @@ export class VideoPage {
 
         new ScrollMagic.Scene({
             triggerElement: sectionName,
-            duration: windowHeight + $(sectionName).height(),
-            offset: 0
+            duration: (windowHeight / 2),
+            offset: 20
         })
             .addTo(scrollMagicController)
             .on("enter leave", e => {
@@ -41,18 +42,32 @@ export class VideoPage {
     };
 
 
-    private playVideo() {
+
+    private setVideo() {
 
         /** video */
-        const videoEle = document.getElementById('video');
+        const videoEle = this.videoEle = document.getElementById('video');
         videoEle.innerHTML = '';
-        var renderer = PIXI.autoDetectRenderer(videoEle.clientWidth, videoEle.clientHeight, { transparent: true });
+        const rate = 1280 / 720;
+
+        let h = videoEle.clientHeight;
+        let w = h * rate;
+        if (videoEle.clientWidth > (w)) {
+            w = videoEle.clientWidth;
+            h = w / rate;
+        }
+        const renderer = this.renderer = PIXI.autoDetectRenderer(
+            w, h, { transparent: true }
+        );
         videoEle.appendChild(renderer.view);
 
 
         // create a video texture from a path
-        const texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
+        const texture = this.texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
         const videoSource = texture.baseTexture.source;
+        //if (videoSource.networkState !== 0)
+        //    videoSource.play();
+
 
         // create a new Sprite using the video texture
         const videoSprite = new PIXI.Sprite(texture);
@@ -60,33 +75,35 @@ export class VideoPage {
         videoSprite.height = renderer.height;
 
         // create the root of the scene graph
-        const stage = new PIXI.Container();
+        const stage = this.stage = new PIXI.Container();
         stage.addChild(videoSprite);
+    };
+
+    private videoEle;
+    private renderer;
+    private stage;
+    private texture;
+
+    private playVideo() {
+
+        const {videoEle, renderer, stage, texture } = this;
+        const videoSource = texture.baseTexture.source;
 
         $(videoEle).fadeIn(2000);
         $('#header').removeClass('img-background');
 
+        if (videoSource.ended && videoSource.paused) {
+            videoSource.currentTime = 0;
+            videoSource.play();
+        }
+
         let animate = () => {
             renderer.render(stage);
 
-            
-            if (videoSource.ended && videoSource.paused) {
-                stage.destroy();
-                videoSprite.destroy();
-                renderer.destroy();
-
+            if ((videoSource.ended && videoSource.paused) ||
+                this.sectionState === SectionState.Outside) {
                 $(videoEle).fadeOut(2000);
                 $('#header').addClass('img-background');
-                
-                return;
-            }
-            if (this.sectionState === SectionState.Outside) {
-                videoSource.pause();
-
-                stage.destroy();
-                videoSprite.destroy();
-                renderer.destroy();
-                
                 return;
             }
 

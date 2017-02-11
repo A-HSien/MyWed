@@ -41,6 +41,10 @@ export class GalleryPage {
             duration: windowHeight + $(sectionName).height(),
             offset: 0
         })
+            //.setTween('#gallery-background', {
+            //    css: { y: '0%' },
+            //    ease: Linear.easeNone
+            //})
             .addTo(scrollMagicController)
             .on("enter leave", e => {
                 if (e.type === "enter") {
