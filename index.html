@@ -36,7 +36,7 @@
     <div id="wrapper">
         <!--header-->
         <section id="header" class="img-background">
-            <div class="logo-container icon
+            <div class="logo-container
                  col-xs-12
                  col-sm-10 offset-sm-1
                  col-md-8 offset-md-2
@@ -60,9 +60,13 @@
                     <img src="assets/img/sha.jpg" class="selfie">
                     <h2 class="title">陳思樺</h2>
                 </div>
-                <h3 class="title">我們要結婚囉!</h3><br>
-                重要的一天即將到來,<br>
-                期待您加入我們的派對｡
+                哈囉~各位親朋好友~<br>
+                Hello, loved ones!<br>
+                我們的婚禮即將來到｡<br>
+                Our wedding is right around the corner~<br>
+                誠摯邀請您來參加,一同玩樂慶祝｡<br>
+                Sincerely invite you to join our wedding party<br>
+                and celebrate this wonderful event with us.
             </div>
         </section>
         <!--announce end-->
@@ -70,9 +74,27 @@
         <section id="party">
             <div class="icon" style="background-image:url('./assets/icon/party.png')"></div>
             <div class="content">
-                2017年6月3日星期六<br>
-                豪鼎飯店(北新店) 7點入席
-
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">婚宴時間</h4>
+                        <p class="card-text">
+                            2017 年 6 月 3日 (六)<br>
+                            晚上7點 準時開席<br>
+                            Party Time: Saturday, June 3rd, 2017 at 19:00 SHARP!
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">婚宴地點</h4>
+                        <p class="card-text">
+                            豪鼎飯店 - 北新館<br>
+                            (新北市新店區北新路三段205號)<br>
+                            Party Location: How Dine Restaurant<br>
+                            ( No. 205, Sec. 3, Beixin Rd., Xindian Dist., New Taipei City, Taiwan)
+                        </p>
+                    </div>
+                </div>
             </div>
             <div id="clockdiv">
                 <div>
@@ -98,8 +120,9 @@
                 <div class="location-marker location-marker-animation"></div>
                 <img class="map">
             </div>
+            <div style="height:300px;text-align:center">樂團介紹</div>
         </section>
-        <!--announce end-->
+        <!--party end-->
         <!--gallery-->
         <section id="gallery">
             <div class="icon" style="background-image:url('./assets/icon/gallery.png')"></div>
@@ -126,83 +149,103 @@
                  col-sm-10 offset-sm-1
                  col-md-8 offset-md-2
                  col-lg-6 offset-lg-3">
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">該怎麼稱呼你?</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name">
-                    </div>
-                </div>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-3">是男方還是女方親友呢?</legend>
-                    <div class="col-sm-9">
+                    <legend class="col-form-legend col-sm-5">請問您的全名？<br>Please fill in your Full Name.</legend>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control">
+                    </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-5">請問您是否願意參加我們的喜宴？<br>Would you like to Join the Party?</legend>
+                    <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="no" checked>
-                                男方
+                                <input class="form-check-input" type="radio" value="yes">
+                                是 Yes
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="yes">
-                                女方
+                                <input class="form-check-input" type="radio" value="no" checked>
+                                否 No
                             </label>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-3">是否要喜帖</legend>
-                    <div class="col-sm-9">
+                    <legend class="col-form-legend col-sm-5">請填寫預估赴宴人數？<br>How many people will Come Along with You (including you)?</legend>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="number" value="1">
+                    </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-5">請問您是新郎或新娘的親友？<br>Bride's Side or Groom's Side? </legend>
+                    <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="no" checked>
-                                否
+                                新郎親友 Friends of the Groom
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" type="radio" value="yes">
-                                是
+                                新娘親友 Friends of the Bride
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-5">請問您想要收到喜帖嗎？<br>Would you like to receive the wedding invitation card ? </legend>
+                    <div class="col-sm-7">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="yes">
+                                是 Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" value="no" checked>
+                                否 No
                             </label>
                         </div>
                     </div>
                 </fieldset>
                 <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-3 col-form-label">寄送喜帖的地址</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="fone">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫喜帖寄送地址<br>Mailing Address for wedding invitation card.</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-3 col-form-label">請留下找得到你的電話</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="fone">
+                    <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫您的聯絡電話<br>Phone Number please.</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control">
                     </div>
                 </div>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-3">是否吃素</legend>
-                    <div class="col-sm-9">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="no" checked>
-                                否
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="yes">
-                                是
-                            </label>
-                        </div>
+                    <legend class="col-form-legend col-sm-5">請問有無吃素呢？<br>How many in your group are Vegetarians (including you)?</legend>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="number" value="1">
                     </div>
                 </fieldset>
                 <div class="form-group row">
-                    <div class="offset-sm-3 col-sm-9">
+                    <div class="offset-sm-5 col-sm-7">
                         <button type="submit" class="btn btn-primary">送出</button>
                     </div>
                 </div>
             </div>
         </section>
         <!--form end-->
+        <!--tks-to-->
+        <section id="tks-to-container" style="background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);">
+            <div class="icon" style="background-image:url('./assets/icon/tks-to.png')"></div>
+            <div id="story-content">
+                <div style="height:300px;text-align:center">感謝名單</div>
+            </div>
+        </section>
+        <!--tks-to end-->
 
     </div>
 
