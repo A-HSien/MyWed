@@ -25,6 +25,17 @@ html, body {
 section {
     position: relative;
     overflow: hidden;
+    padding: 6em 0;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    height: 10em;
+    max-width: 60%;
+    margin: 0 auto 6em auto;
 }
 
 
@@ -151,7 +162,7 @@ section {
         background: url("./img/header.jpg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
-        opacity: 0.9;
+        opacity: 0.8;
     }
 
     #header i.fa-angle-double-down {
@@ -189,7 +200,7 @@ section {
 
     #header .logo {
         position: absolute;
-        top: 40%;
+        top: 10%;
         left: 0;
         width: 100%;
         z-index: 100;
@@ -197,13 +208,13 @@ section {
 
 @media screen and (max-width:992px) {
     #header .logo {
-        top: 45%;
+        top: 20%;
     }
 }
 
 @media screen and (max-width:768px ) {
     #header .logo {
-        top: 50%;
+        top: 30%;
     }
 }
 
@@ -217,62 +228,65 @@ section {
 /*announce*/
 #announce {
     z-index: 1;
-    /*height: 420px;*/
+    background-color: #fff;
 }
 
-#announce-background {
-    position: absolute;
-    z-index: -1;
-    min-width: 100%;
-    min-height: 150%;
-    transform: translateY(-50%);
-    background: url("./background/pexels-photo-169190.jpeg") no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
-
-#announce .selfie {
-    position: absolute;
-    border-radius: 50%;
-    width: 20%;
-    max-width: 220px;
-    min-width: 120px;
-    top: 180px;
-    transform: translate(-50%, -50%);
-}
-
-#announce .selfie-left {
-    left: 0%;
-}
-
-#announce .selfie-right {
-    left: 100%;
-}
-
-#announce .content {
-    text-align: center;
-    padding-top: 120px;
-}
-
-@media screen and (max-width:768px ) {
-    /*#announce .selfie {
-        top: 30%;
-    }*/
 
     #announce .content {
-        padding-top: 330px;
+        position: relative;
+        text-align: center;
+        padding-top: 20em;
+    }
+
+        #announce .content .selfie-container {
+            position: absolute;
+            width: 25%;
+            top: 7em;
+            transform: translate(-50%, -50%);
+        }
+
+            #announce .content .selfie-container .title {
+                margin-top: 1em;
+            }
+
+        #announce .content .selfie {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        #announce .content .selfie-left {
+            left: 0%;
+        }
+
+        #announce .content .selfie-right {
+            left: 100%;
+        }
+
+@media screen and (max-width:768px ) {
+    #announce .content .selfie-container {
+        width: 35%;
     }
 }
+
+/*announce end*/
+
+/*party*/
+#party {
+    background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+}
+
+
+    #party .content {
+        font-size: larger;
+        text-align: center;
+    }
 
 #clock-container {
     overflow: hidden;
 }
 
-
-
-
 #clockdiv {
-    width: 500px;
+    width: 30em;
     margin: 0px auto;
     padding: 100px 0;
     text-align: center;
@@ -281,12 +295,12 @@ section {
 
 
     #clockdiv > div {
-        width: 22%;
-        padding: 10px;
-        margin: 5px;
-        border: solid 1px rgba(0, 0, 0, 0.2);
-        border-radius: 3px;
-        background: rgba(0, 191, 150, 0.3);
+        width: 6em;
+        height: 6em;
+        padding: 1.2em;
+        margin: 0.3em;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
         display: inline-block;
         color: #fff;
         text-shadow: 0px 0px 12px #404040;
@@ -295,16 +309,13 @@ section {
 
         #clockdiv > div > span {
             width: 100%;
-            padding: 15px;
-            border-radius: 3px;
-            border: solid 1px rgba(0, 0, 0, 0.2);
-            background: rgba(0, 191, 150, 0.1);
+            font-size: 1.6em;
             display: inline-block;
         }
 
         #clockdiv > div > .smalltext {
             padding-top: 5px;
-            font-size: 16px;
+            font-size: 0.8em;
         }
 
 @media screen and (max-width:768px ) {
@@ -332,7 +343,6 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
         border-radius: 3px;
     }
 
@@ -376,11 +386,11 @@ section {
 
 
 @media screen and (max-width:768px ) {
-#map-container {
-    margin-bottom: 0;
+    #map-container {
+        margin-bottom: 0;
+    }
 }
-}
-/*announce end*/
+/*party end*/
 
 
 
@@ -391,49 +401,40 @@ section {
     text-align: center;
 }
 
-#gallery-background {
-    position: absolute;
-    z-index: -1;
-    min-width: 100%;
-    min-height: 100%;
-    /*transform: translateY(0%);*/
-    background: url("./background/wedding-437969_1920.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
 
-#gallery .photo {
-    margin: 50px auto 0 auto;
-    max-width: 80%;
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: contain;
-    background-size: contain;
-    opacity: 0;
-}
 
-#gallery .photos-container {
-    margin: 20px 20px 50px 20px;
-    overflow-x: auto;
-    overflow-Y: hidden;
-}
-
-#gallery .photos div {
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    border: solid 1px rgba(0,0,0, 0.2);
-    background-color: rgba(0,0,0, 0.2);
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-
-    #gallery .photos div:hover {
-        border: solid 1px #fdc3c7;
+    #gallery .photo {
+        margin: 50px auto 0 auto;
+        max-width: 80%;
+        height: 80vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: contain;
+        background-size: contain;
+        opacity: 0;
     }
+
+    #gallery .photos-container {
+        margin: 20px 20px 50px 20px;
+        overflow-x: auto;
+        overflow-Y: hidden;
+    }
+
+    #gallery .photos div {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        border: solid 1px rgba(0,0,0, 0.2);
+        background-color: rgba(0,0,0, 0.2);
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: contain;
+        background-size: contain;
+    }
+
+        #gallery .photos div:hover {
+            border: solid 1px #fdc3c7;
+        }
 
 
 
@@ -450,7 +451,7 @@ section {
         min-width: 100%;
         min-height: 120%;
         transform: translateY(-20%);
-        background: url("./background/pexels-photo-169211.jpeg") no-repeat center center;
+        background: url("./background/wedding.jpg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
     }

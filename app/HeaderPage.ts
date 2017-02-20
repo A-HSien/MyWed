@@ -6,7 +6,7 @@ declare const PIXI: any;
 import {SectionState} from './SectionState.enum';
 
 
-export class VideoPage {
+export class HeaderPage {
 
     private sectionState: SectionState = SectionState.Inside;
 
@@ -15,8 +15,8 @@ export class VideoPage {
         windowHeight: number,
         windowWidth: number
     ) {
-        this.monitorSectionState(scrollMagicController, windowHeight);
-        this.setVideo();
+        //this.monitorSectionState(scrollMagicController, windowHeight);
+        //this.setVideo();
         //this.setTweenForImageIcon(scrollMagicController, windowHeight);
     };
 

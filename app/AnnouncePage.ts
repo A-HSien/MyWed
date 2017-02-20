@@ -16,7 +16,7 @@ export class AnnouncePage {
         this.setSelfiePortrait(scrollMagicController);
         this.setCountdownClock();
         this.setMap(windowWidth);
-        this.setBackgroundTween(windowHeight, scrollMagicController)
+       // this.setBackgroundTween(windowHeight, scrollMagicController)
     };
 
 
