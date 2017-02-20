@@ -162,7 +162,6 @@ section {
         background: url("./img/header.jpg") no-repeat center center;
         -webkit-background-size: cover;
         background-size: cover;
-        opacity: 0.8;
     }
 
     #header i.fa-angle-double-down {
