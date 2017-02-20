@@ -34,7 +34,7 @@ section {
     -webkit-background-size: contain;
     background-size: contain;
     height: 10em;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto 6em auto;
 }
 
@@ -325,7 +325,7 @@ section {
 
 @media screen and (max-width:768px ) {
     #clockdiv {
-        width: 100px;
+        width: 6em;
         padding: 30px 0;
     }
 
