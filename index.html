@@ -150,7 +150,7 @@
                 <fieldset class="form-group row">
                     <legend class="col-form-legend col-sm-5">請問您的全名？<br>Please fill in your Full Name.</legend>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control">
+                        <input name="name" type="text" class="form-control">
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
@@ -158,13 +158,13 @@
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="yes">
+                                <input name="will-join" class="form-check-input" type="radio" value="true">
                                 是 Yes
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="no" checked>
+                                <input name="will-join" class="form-check-input" type="radio" value="false" checked>
                                 否 No
                             </label>
                         </div>
@@ -173,7 +173,7 @@
                 <fieldset class="form-group row">
                     <legend class="col-form-legend col-sm-5">請填寫預估赴宴人數？<br>How many people will Come Along with You (including you)?</legend>
                     <div class="col-sm-7">
-                        <input class="form-control" type="number" value="1">
+                        <input name="people-number" class="form-control" type="number" value="1">
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
@@ -181,13 +181,13 @@
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="no" checked>
+                                <input name="is-groom-side" class="form-check-input" type="radio" value="true">
                                 新郎親友 Friends of the Groom
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="yes">
+                                <input name="is-groom-side" class="form-check-input" type="radio" value="false" checked>
                                 新娘親友 Friends of the Bride
                             </label>
                         </div>
@@ -198,13 +198,13 @@
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="yes">
+                                <input name="want-invitation-card" class="form-check-input" type="radio" value="true">
                                 是 Yes
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" value="no" checked>
+                                <input name="want-invitation-card" class="form-check-input" type="radio" value="false" checked>
                                 否 No
                             </label>
                         </div>
@@ -213,24 +213,24 @@
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫喜帖寄送地址<br>Mailing Address for wedding invitation card.</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control">
+                        <input name="address" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫您的聯絡電話<br>Phone Number please.</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control">
+                        <input name="phone-number" type="text" class="form-control">
                     </div>
                 </div>
                 <fieldset class="form-group row">
                     <legend class="col-form-legend col-sm-5">請問有無吃素呢？<br>How many in your group are Vegetarians (including you)?</legend>
                     <div class="col-sm-7">
-                        <input class="form-control" type="number" value="1">
+                        <input name="vegetarian-number" class="form-control" type="number" value="1">
                     </div>
                 </fieldset>
                 <div class="form-group row">
                     <div class="offset-sm-5 col-sm-7">
-                        <button type="submit" class="btn btn-primary">送出</button>
+                        <button type="submit" class="btn btn-primary js-submit">送出</button>
                     </div>
                 </div>
             </div>
@@ -252,10 +252,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
             crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
     <script src="assets/system.src.js"></script>
     <script src="assets/systemjs.config.js"></script>
     <script>
