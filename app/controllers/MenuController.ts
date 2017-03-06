@@ -1,6 +1,6 @@
 ﻿declare const $: any;
 
-export class Menu {
+export class MenuController {
 
     constructor(
         private windowHeight: number

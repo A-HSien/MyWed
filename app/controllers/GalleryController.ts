@@ -3,10 +3,10 @@ declare const ScrollMagic: any;
 declare const TweenMax: any;
 declare const Linear: any;
 
-import {SectionState} from './SectionState.enum';
+import {SectionState} from '../SectionState.enum';
 
 
-export class GalleryPage {
+export class GalleryController {
 
     private sectionState: SectionState = SectionState.Inside;
 

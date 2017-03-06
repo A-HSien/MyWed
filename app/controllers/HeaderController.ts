@@ -3,10 +3,10 @@ declare const ScrollMagic: any;
 declare const TweenMax: any;
 declare const PIXI: any;
 
-import {SectionState} from './SectionState.enum';
+import {SectionState} from '../SectionState.enum';
 
 
-export class HeaderPage {
+export class HeaderController {
 
     private sectionState: SectionState = SectionState.Inside;
 
@@ -17,7 +17,7 @@ export class HeaderPage {
     ) {
         //this.monitorSectionState(scrollMagicController, windowHeight);
         //this.setVideo();
-        //this.setTweenForImageIcon(scrollMagicController, windowHeight);
+        this.setTweenForImageIcon(scrollMagicController, windowHeight);
     };
 
 

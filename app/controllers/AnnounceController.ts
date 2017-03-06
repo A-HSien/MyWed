@@ -5,7 +5,7 @@ declare const Linear: any;
 
 
 
-export class AnnouncePage {
+export class AnnounceController {
 
     constructor(
         scrollMagicController: any,

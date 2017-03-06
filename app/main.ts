@@ -1,11 +1,11 @@
 ﻿declare const $: any;
 declare const ScrollMagic: any;
 declare const firebase: any;
-import { Menu } from './Menu';
-import { HeaderPage } from './HeaderPage';
-import { AnnouncePage } from './AnnouncePage';
-import { GalleryPage } from './GalleryPage';
-import { StoryPage } from './StoryPage';
+import { MenuController } from './controllers/MenuController';
+import { HeaderController } from './controllers/HeaderController';
+import { AnnounceController } from './controllers/AnnounceController';
+import { GalleryController } from './controllers/GalleryController';
+import { StoryController } from './controllers/StoryController';
 import { RSVPController } from './controllers/RSVPController';
 
 //db init
@@ -21,9 +21,9 @@ const windowWidth = $(window).width() as number;
 const windowHeight = $(window).height() as number;
 let scrollMagicController = new ScrollMagic.Controller();
 
-new Menu(windowHeight);
-new HeaderPage(scrollMagicController, windowHeight, windowWidth);
-new AnnouncePage(scrollMagicController, windowHeight, windowWidth);
-new GalleryPage(scrollMagicController, windowHeight, windowWidth);
-new StoryPage(scrollMagicController, windowHeight, windowWidth);
+new MenuController(windowHeight);
+new HeaderController(scrollMagicController, windowHeight, windowWidth);
+new AnnounceController(scrollMagicController, windowHeight, windowWidth);
+new GalleryController(scrollMagicController, windowHeight, windowWidth);
+new StoryController(scrollMagicController, windowHeight, windowWidth);
 new RSVPController(scrollMagicController, windowHeight, windowWidth);
