@@ -6,30 +6,35 @@ declare const Linear: any;
 
 export class StoryController {
 
+    private sectionName = '#story-container';
+    private isThumbnailInitiated = false;
+
     constructor(
         scrollMagicController: any,
         windowHeight: number,
         windowWidth: number
     ) {
 
-        const sectionName = '#story-container';
-
         new ScrollMagic.Scene({
-            triggerElement: sectionName,
+            triggerElement: this.sectionName,
             triggerHook: "onEnter",
-            duration: windowHeight + $(sectionName).height(),
+            duration: windowHeight + $(this.sectionName).height(),
         }).setTween('#story-background', {
             css: { y: '0%' },
             ease: Linear.easeNone
         }).addTo(scrollMagicController)
             .on("enter", e => {
+                if (this.isThumbnailInitiated) return;
                 this.setPhotos();
             });
     };
 
     private setPhotos() {
 
-        const basePath = 'assets/life/';
+        this.isThumbnailInitiated = true;
+
+        const thumbnailPath = 'assets/life/';
+        const galleryPath = 'assets/life/';
         const photos = [
             '201307', '201308',
             '201312', '201401',
@@ -45,11 +50,12 @@ export class StoryController {
         ];
 
         const eles = photos.reduce((array, photo) => {
-            const $img = $('<div class="photo">').css('background-image', `url(${basePath}${photo}.jpg)`);
-            array.push($img);
+            const $asset = $(`<div class="photo js-showcase-asset" data-image-url="${galleryPath}${photo}.jpg">`)
+                .css('background-image', `url(${thumbnailPath}${photo}.jpg)`);
+            array.push($asset);
             return array;
         }, []);
 
-        $('#story-content').html(eles);
+        $(this.sectionName).find('.assets-content').html(eles);
     };
 };

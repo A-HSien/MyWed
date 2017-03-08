@@ -1,4 +1,5 @@
 ﻿declare const $: any;
+import { FullWindowToggleController } from './FullWindowToggleController';
 
 export class MenuController {
 
@@ -6,30 +7,31 @@ export class MenuController {
         private windowHeight: number
     ) {
 
-        $('#menu .hamburger').on('click', this.onHamburgerClicked.bind(this));
+        $('#full-window-toggle .fa-bars').on('click', this.onHamburgerClicked.bind(this));
         $('#menu').on('click', 'ul > li', this.onMenuItemsClicked.bind(this));
     };
 
     onHamburgerClicked() {
-        $('html').toggleClass('open-menu');
         this.adjustMenuItems();
     };
 
+
     onMenuItemsClicked($event: any) {
-        $('html').toggleClass('open-menu');
+        FullWindowToggleController.closeAllFullWindowComponents();
 
         const target = $($event.currentTarget).data('scrollTo');
         const offsetTop = $(target).offset().top;
         const currentOffsetTop = $(window).scrollTop();
         const offset = Math.max(offsetTop, currentOffsetTop) - Math.min(offsetTop, currentOffsetTop);
-        $('html, body').animate({ scrollTop: offsetTop }, offset * 1.2);
+        $('html, body').animate({ scrollTop: offsetTop }, offset * 0.5);
     };
 
     adjustMenuItems() {
         const windowHeight = this.windowHeight;
-        const $menuItems = $('#menu .menu-items');
-        if (windowHeight > $menuItems.height()) {
-            $menuItems.css('top', (windowHeight - $menuItems.height()) / 2);
+        const $menuItems = $('#menu ul');
+        const $menuItemsH = $menuItems.height();
+        if (windowHeight > $menuItemsH) {
+            $menuItems.css('margin-top', (windowHeight - $menuItemsH - 20) / 2);
         } else {
             $menuItems.height(windowHeight);
         }
