@@ -19,7 +19,7 @@ html, body {
 section {
     position: relative;
     overflow: hidden;
-    padding: 6rem 0;
+    /*padding: 6rem 0;*/
 }
 
 .icon {
@@ -29,7 +29,7 @@ section {
     background-size: contain;
     height: 10rem;
     max-width: 50%;
-    margin: 0 auto 6rem auto;
+    margin: 3rem auto 3rem auto;
 }
 
 
@@ -72,10 +72,36 @@ section {
 
 
 
+.simple-background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./assets/background/asanoha-400px.png');
+    width: 100%;
+    height: 100%;
+    /*opacity: 0.9;*/
+    z-index: -1;
+}
+
+
+.dark-background {
+    background-color: black;
+}
 
 .title {
     text-align: center;
 }
+
+.padding-top {
+    padding-top: 3rem;
+}
+
+.padding-bottom {
+    padding-bottom: 3rem;
+}
+
 
 .assets-content {
     width: 100%;
@@ -458,19 +484,6 @@ section {
 #form-container {
     position: relative;
 }
-
-    #form-container:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url('./assets/background/asanoha-400px.png');
-        width: 100%;
-        height: 100%;
-        /*opacity: 0.9;*/
-        z-index: -1;
-    }
 
     #form-container .title {
         padding: 30px 0;
