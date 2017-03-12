@@ -6,7 +6,7 @@ declare const Linear: any;
 import {SectionState} from '../SectionState.enum';
 
 
-export class GalleryController {
+export class SlideShowController {
 
     private sectionState: SectionState = SectionState.Inside;
 

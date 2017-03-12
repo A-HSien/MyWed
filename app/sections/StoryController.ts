@@ -19,9 +19,6 @@ export class StoryController {
             triggerElement: this.sectionName,
             triggerHook: "onEnter",
             duration: windowHeight + $(this.sectionName).height(),
-        }).setTween('#story-background', {
-            css: { y: '0%' },
-            ease: Linear.easeNone
         }).addTo(scrollMagicController)
             .on("enter", e => {
                 if (this.isThumbnailInitiated) return;
