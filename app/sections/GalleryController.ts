@@ -33,16 +33,29 @@ export class GalleryController {
 
 
     private setThumbnail() {
+
+        const height = $(window).height() as number;
+        const width = $(window).width() as number;
+        const size = (height>width)? height: width;
+        let folder;
+        const allSize = [1920,1080,720,360];
+       allSize.forEach( e => {
+          if( e > size )
+          folder = e;
+        });
+        if(!folder)
+            folder=1920;
+
         this.isThumbnailInitiated = true;
 
-        const thumbnailPath = 'assets/img/thumbnail/';
-        const galleryPath = 'assets/img/gallery/';
+        const thumbnailPath = 'assets/gallery/360/';
+        const galleryPath = `assets/gallery/${folder}/`;
         const photos = [
-            'W_J002190-0001.jpg', 'W_J002190-0034.jpg', 'W_J002190-0041.jpg', 'W_J002190-0049.jpg', 'W_J002190-0088.jpg',
-            'W_J002190-0091.jpg', 'W_J002190-0092.jpg', 'W_J002190-0094.jpg', 'W_J002190-0096.jpg', 'W_J002190-0105.jpg',
-            'W_J002190-0132.jpg', 'W_J002190-0143.jpg', 'W_J002190-0149.jpg', 'W_J002190-0158.jpg', 'W_J002190-0170.jpg',
-            'W_J002190-0173.jpg', 'W_J002190-0179.jpg', 'W_J002190-0183.jpg', 'W_J002190-0188.jpg', 'W_J002190-0203.jpg',
-            'W_J002190-0215.jpg', 'W_J002190-0222.jpg'
+            'J002190-0001.jpg', 'J002190-0034.jpg', 'J002190-0041.jpg', 'J002190-0049.jpg', 'J002190-0088.jpg',
+            'J002190-0091.jpg', 'J002190-0092.jpg', 'J002190-0094.jpg', 'J002190-0096.jpg', 'J002190-0105.jpg',
+            'J002190-0132.jpg', 'J002190-0143.jpg', 'J002190-0149.jpg', 'J002190-0158.jpg', 'J002190-0170.jpg',
+            'J002190-0173.jpg', 'J002190-0179.jpg', 'J002190-0183.jpg', 'J002190-0188.jpg', 'J002190-0203.jpg',
+            'J002190-0215.jpg', 'J002190-0222.jpg'
         ];
 
         const thumbnailPaths = photos.reduce((array, photo) => {

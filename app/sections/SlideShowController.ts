@@ -76,7 +76,7 @@ export class SlideShowController {
     private loadImage() {
         if (this.sectionState === SectionState.Outside) return;
 
-        const galleryPath = 'assets/img/gallery/';
+        const galleryPath = 'assets/gallery/';
         const img = new Image();
         img.src = galleryPath + this.photos[0];
 

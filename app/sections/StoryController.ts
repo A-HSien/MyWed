@@ -30,8 +30,8 @@ export class StoryController {
 
         this.isThumbnailInitiated = true;
 
-        const thumbnailPath = 'assets/life/';
-        const galleryPath = 'assets/life/';
+        const thumbnailPath = 'assets/life/360/';
+        const galleryPath = 'assets/life/original/';
         const photos = [
             '201307', '201308',
             '201312', '201401',
