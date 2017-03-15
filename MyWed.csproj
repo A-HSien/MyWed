@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4714D219-B483-43AB-BD7C-95D0DA089D57}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyWed</RootNamespace>
+    <AssemblyName>MyWed</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\background\04.jpg" />
+    <Content Include="assets\background\asanoha-400px.png" />
+    <Content Include="assets\background\blurred purple pink.jpg" />
+    <Content Include="assets\background\crissXcross.png" />
+    <Content Include="assets\background\footer_lodyas.png" />
+    <Content Include="assets\background\logo_x_pattern.png" />
+    <Content Include="assets\background\noisy_net.png" />
+    <Content Include="assets\background\pexels-photo-169190-1.jpg" />
+    <Content Include="assets\background\pexels-photo-169190.jpeg" />
+    <Content Include="assets\background\pexels-photo-169211.jpeg" />
+    <Content Include="assets\background\pink grunge.jpg" />
+    <Content Include="assets\background\pink_rice.png" />
+    <Content Include="assets\background\restaurant_icons.png" />
+    <Content Include="assets\background\skulls.png" />
+    <Content Include="assets\background\symphony.png" />
+    <Content Include="assets\background\weather.png" />
+    <Content Include="assets\background\wedding.jpg" />
+    <Content Include="assets\icon\gallery.png" />
+    <Content Include="assets\icon\icon.png" />
+    <Content Include="assets\icon\logo-1.png" />
+    <Content Include="assets\icon\logo-2.png" />
+    <Content Include="assets\icon\logo-3.png" />
+    <Content Include="assets\icon\logo-4.png" />
+    <Content Include="assets\icon\logo-5.png" />
+    <Content Include="assets\icon\logo-6.png" />
+    <Content Include="assets\icon\party.png" />
+    <Content Include="assets\icon\rsvp.png" />
+    <Content Include="assets\icon\sample.png" />
+    <Content Include="assets\icon\story.png" />
+    <Content Include="assets\icon\tks-to.png" />
+    <Content Include="assets\icon\us.png" />
+    <Content Include="assets\img\ahsien.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0001.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0034.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0041.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0049.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0088.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0091.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0092.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0094.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0096.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0105.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0132.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0143.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0149.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0158.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0170.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0173.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0179.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0183.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0188.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0203.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0215.jpg" />
+    <Content Include="assets\img\gallery\W_J002190-0222.jpg" />
+    <Content Include="assets\img\header.jpg" />
+    <Content Include="assets\img\sha.jpg" />
+    <Content Include="assets\img\sha.png" />
+    <Content Include="assets\img\thumbnail\W_J002190-0001.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0034.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0041.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0049.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0088.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0091.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0092.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0094.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0096.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0105.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0132.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0143.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0149.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0158.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0170.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0173.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0179.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0183.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0188.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0203.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0215.jpg" />
+    <Content Include="assets\img\thumbnail\W_J002190-0222.jpg" />
+    <Content Include="assets\life\201307.jpg" />
+    <Content Include="assets\life\201308.jpg" />
+    <Content Include="assets\life\201312.jpg" />
+    <Content Include="assets\life\201401-3.jpg" />
+    <Content Include="assets\life\201401-4.jpg" />
+    <Content Include="assets\life\201401.jpg" />
+    <Content Include="assets\life\201402.jpg" />
+    <Content Include="assets\life\201403.jpg" />
+    <Content Include="assets\life\201406.jpg" />
+    <Content Include="assets\life\201407.jpg" />
+    <Content Include="assets\life\201501.jpg" />
+    <Content Include="assets\life\201504-2.jpg" />
+    <Content Include="assets\life\201504.jpg" />
+    <Content Include="assets\life\201507.jpg" />
+    <Content Include="assets\life\201601.jpg" />
+    <Content Include="assets\life\201607.jpg" />
+    <Content Include="assets\life\20160928.jpg" />
+    <Content Include="assets\life\20161126.jpg" />
+    <Content Include="assets\life\20161231-2.jpg" />
+    <Content Include="assets\life\20161231.jpg" />
+    <Content Include="assets\life\20170101.jpg" />
+    <Content Include="assets\system.src.js" />
+    <Content Include="assets\systemjs.config.js" />
+    <Content Include="assets\video\forest.mp4" />
+    <Content Include="index.css" />
+    <Content Include="index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\components\FullWindowToggleController.ts" />
+    <TypeScriptCompile Include="app\components\MenuController.ts" />
+    <TypeScriptCompile Include="app\components\ShowcaseController.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\SectionState.enum.ts" />
+    <TypeScriptCompile Include="app\sections\AnnounceController.ts" />
+    <TypeScriptCompile Include="app\sections\BandController.ts" />
+    <TypeScriptCompile Include="app\sections\GalleryController.ts" />
+    <TypeScriptCompile Include="app\sections\HeaderController.ts" />
+    <TypeScriptCompile Include="app\sections\RSVPController.ts" />
+    <TypeScriptCompile Include="app\sections\SlideShowController.ts" />
+    <TypeScriptCompile Include="app\sections\StoryController.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1656</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1656/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
