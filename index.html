@@ -22,7 +22,7 @@
 <body>
     <div id="full-window-toggle">
         <i class="fa fa-lg fa-bars"></i>
-        <i class="fa fa-lg fa-arrow-left" style="display: none;"></i>
+        <i class="fa fa-lg fa-arrow-left" style="display: none;color: rgba(255,255,255,0.8)"></i>
     </div>
 
     <nav id="menu" class="full-window-content full-window-content-hidden animation">
@@ -50,9 +50,7 @@
         <!--announce-->
         <section id="announce" class="simple-background padding-top padding-bottom">
             <!--<div class="icon" style="background-image:url('./assets/icon/720/us.png')"></div>-->
-            <div class="content
-                 col-md-10 offset-md-1
-                 col-lg-8 offset-lg-2">
+            <div class="selfie-content">
                 <div class="selfie-container selfie-left">
                     <img src="assets/img/ahsien.jpg" class="selfie">
                     <h2 class="title">張效賢</h2>
@@ -61,6 +59,10 @@
                     <img src="assets/img/sha.jpg" class="selfie">
                     <h2 class="title">陳思樺</h2>
                 </div>
+            </div>
+            <div class="content
+                 col-md-10 offset-md-1
+                 col-lg-8 offset-lg-2">
                 哈囉~各位親朋好友~<br>
                 Hello, loved ones!<br>
                 我們的婚禮即將來到｡<br>
@@ -145,13 +147,13 @@
                  col-md-8 offset-md-2
                  col-lg-6 offset-lg-3">
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請問您的全名？<br>Please fill in your Full Name.</legend>
+                    <label class="col-form-label col-sm-5">請問您的全名？<br>Please fill in your Full Name.</label>
                     <div class="col-sm-7">
                         <input name="name" type="text" class="form-control">
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請問您是否願意參加我們的喜宴？<br>Would you like to Join the Party?</legend>
+                    <label class="col-form-label col-sm-5">請問您是否願意參加我們的喜宴？<br>Would you like to Join the Party?</label>
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
@@ -168,13 +170,13 @@
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請填寫預估赴宴人數？<br>How many people will Come Along with You (including you)?</legend>
+                    <label class="col-form-label col-sm-5">請填寫預估赴宴人數？<br>How many people will Come Along with You (including you)?</label>
                     <div class="col-sm-7">
                         <input name="people-number" class="form-control" type="number" value="1">
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請問您是新郎或新娘的親友？<br>Bride's Side or Groom's Side? </legend>
+                    <label class="col-form-label col-sm-5">請問您是新郎或新娘的親友？<br>Bride's Side or Groom's Side? </label>
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
@@ -191,7 +193,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請問您想要收到喜帖嗎？<br>Would you like to receive the wedding invitation card ? </legend>
+                    <label class="col-form-label col-sm-5">請問您想要收到喜帖嗎？<br>Would you like to receive the wedding invitation card ? </label>
                     <div class="col-sm-7">
                         <div class="form-check">
                             <label class="form-check-label">
@@ -207,29 +209,29 @@
                         </div>
                     </div>
                 </fieldset>
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫喜帖寄送地址<br>Mailing Address for wedding invitation card.</label>
+                <fieldset class="form-group row">
+                    <label class="col-sm-5 col-form-label">請填寫喜帖寄送地址<br>Mailing Address for wedding invitation card.</label>
                     <div class="col-sm-7">
                         <input name="address" type="text" class="form-control">
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-5 col-form-label">請填寫您的聯絡電話<br>Phone Number please.</label>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <label class="col-sm-5 col-form-label">請填寫您的聯絡電話<br>Phone Number please.</label>
                     <div class="col-sm-7">
                         <input name="phone-number" type="text" class="form-control">
                     </div>
-                </div>
+                </fieldset>
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-5">請問有無吃素呢？<br>How many in your group are Vegetarians (including you)?</legend>
+                    <label class="col-form-label col-sm-5">請問有無吃素呢？<br>How many in your group are Vegetarians (including you)?</label>
                     <div class="col-sm-7">
                         <input name="vegetarian-number" class="form-control" type="number" value="1">
                     </div>
                 </fieldset>
-                <div class="form-group row">
+                <fieldset class="form-group row">
                     <div class="offset-sm-5 col-sm-7">
                         <button type="submit" class="btn btn-primary js-submit">送出</button>
                     </div>
-                </div>
+                </fieldset>
             </div>
         </section>
         <!--form end-->
@@ -240,7 +242,7 @@
         </section>
         <!--story end-->
         <!--tks-to-->
-        <section id="tks-to-container" style="background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);">
+        <section id="tks-to-container" class="padding-bottom" style="background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);">
             <div class="icon" style="background-image:url('./assets/icon/720/tks-to.png')"></div>
             <div id="story-content">
                 <div style="height:300px;text-align:center;padding: 2rem 0">

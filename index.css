@@ -19,7 +19,6 @@ html, body {
 section {
     position: relative;
     overflow: hidden;
-    /*padding: 6rem 0;*/
 }
 
 .icon {
@@ -28,8 +27,8 @@ section {
     -webkit-background-size: contain;
     background-size: contain;
     height: 10rem;
-    max-width: 50%;
-    margin: 3rem auto 3rem auto;
+    max-width: 60%;
+    margin: 2rem auto 2rem auto;
 }
 
 
@@ -290,53 +289,67 @@ section {
 
 /* announce */
     #announce .content {
-        position: relative;
         text-align: center;
-        padding-top: 20rem;
+        padding-top: 3rem;
     }
 
-        #announce .content .selfie-container {
-            position: absolute;
+    #announce .selfie-content{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+        #announce .selfie-container {
+            position: relative;
             width: 25%;
-            top: 7rem;
-            transform: translate(-50%, -50%);
+            max-width: 360px;
         }
 
-            #announce .content .selfie-container .title {
+            #announce .selfie-container .title {
                 margin-top: 1rem;
             }
 
-        #announce .content .selfie {
+        #announce .selfie {
             width: 100%;
             border-radius: 50%;
+            padding: 0.5rem;
         }
 
-        #announce .content .selfie-left {
-            left: 0%;
+
+        #announce .selfie-left {
+            left: -30%;
         }
 
-        #announce .content .selfie-right {
-            left: 100%;
+        #announce .selfie-right {
+            right: -30%;
         }
+
+
 
 @media screen and (max-width:768px ) {
-    #announce .content .selfie-container {
+    #announce .selfie-container {
+        width: 30%;
+    }
+}
+@media screen and (max-width:576px ) {
+    #announce .selfie-container {
         width: 35%;
     }
 }
 /* announce end */
 
 
+
 /* party */
-
-
     #party .content {
         width: 30rem;
+        max-width: 100%;
         margin: 0 auto;
     }
 
         #party .content .card {
             background-color: rgba(255,255,255,0.1);
+        margin: 0.5rem;
         }
 
 
@@ -346,7 +359,7 @@ section {
 
 #clockdiv {
     width: 30rem;
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 3rem 0;
     text-align: center;
     z-index: 1;
@@ -438,11 +451,6 @@ section {
 }
 
 
-@media screen and (max-width:768px ) {
-    #map-container {
-        margin-bottom: 0;
-    }
-}
 /* party end */
 
 

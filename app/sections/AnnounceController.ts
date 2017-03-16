@@ -22,12 +22,12 @@ export class AnnounceController {
 
     private setSelfiePortrait(scrollMagicController: any) {
         new ScrollMagic.Scene({
-            triggerElement: '#announce'
-        }).setTween(TweenMax.to('#announce .selfie-left', 1, { css: { 'left': "30%" } }))
+            triggerElement: '#announce',
+        }).setTween(TweenMax.to('#announce .selfie-left', 1, { css: { 'left': "0" } }))
             .addTo(scrollMagicController);
         new ScrollMagic.Scene({
-            triggerElement: '#announce'
-        }).setTween(TweenMax.to('#announce .selfie-right', 1, { css: { 'left': "70%" } }))
+            triggerElement: '#announce',
+        }).setTween(TweenMax.to('#announce .selfie-right', 1, { css: { 'right': "0" } }))
             .addTo(scrollMagicController);
     };
 
