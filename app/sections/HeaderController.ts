@@ -125,6 +125,7 @@ export class HeaderController {
 
         new ScrollMagic.Scene({
             triggerElement: '#header img',
+            triggerHook:'0.2',
             duration: windowHeight,
             offset: 0
         })
