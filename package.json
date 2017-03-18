@@ -5,11 +5,14 @@
   "main": "index.html",
   "scripts": {
     "serve": "lite-server",
-    "tsc": "tsc"
+    "build": "tsc && npm run sass",
+    "sass": "node-sass --output-style expanded --source-map true --precision 6 index.scss index.css"
   },
   "devDependencies": {
+    "bootstrap": "~4.0.0-alpha.6",
     "lite-server": "^2.2.0",
     "typescript": "~2.0.10",
+    "node-sass": "^4.5.0",
     "systemjs": "^0.19.41"
   },
   "author": "a-hsien",
