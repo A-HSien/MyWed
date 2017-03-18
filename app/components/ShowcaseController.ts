@@ -10,6 +10,9 @@ export class ShowcaseController {
     };
 
     onAssetsClicked(e: any) {
+
+        alert('showcase');
+
         FullWindowToggleController.openFullWindowComponent(FullWindowComponentType.Showcase);
 
         const $ele = $(e.currentTarget);

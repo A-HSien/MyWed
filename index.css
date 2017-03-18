@@ -306,28 +306,63 @@ section {
   position: relative;
 }
 
-#announce .selfie-content .selfie-container-right {
-  right: 0;
-}
-
-#announce .selfie-content .selfie-container-left {
-  left: 0;
-}
-
-#announce .selfie-container {
+#announce .selfie-content .selfie-container {
   position: absolute;
   width: 30%;
   max-width: 360px;
 }
 
-#announce .selfie-container .title {
+#announce .selfie-content .selfie-container .title {
   margin-top: 1rem;
 }
 
-#announce .selfie-container .selfie {
+#announce .selfie-content .selfie-container .selfie {
   width: 100%;
   border-radius: 50%;
   padding: 0.5rem;
+}
+
+#announce .selfie-content .selfie-container-right {
+  right: 25%;
+}
+
+#announce .selfie-content .selfie-container-left {
+  left: 25%;
+}
+
+#announce .selfie-content .selfie-container-right {
+  right: 20%;
+}
+
+#announce .selfie-content .selfie-container-left {
+  left: 20%;
+}
+
+@media (max-width: 1199px) {
+  #announce .selfie-content .selfie-container-right {
+    right: 18%;
+  }
+  #announce .selfie-content .selfie-container-left {
+    left: 18%;
+  }
+}
+
+@media (max-width: 991px) {
+  #announce .selfie-content .selfie-container-right {
+    right: 17%;
+  }
+  #announce .selfie-content .selfie-container-left {
+    left: 17%;
+  }
+}
+
+@media (max-width: 575px) {
+  #announce .selfie-content .selfie-container-right {
+    right: 16%;
+  }
+  #announce .selfie-content .selfie-container-left {
+    left: 16%;
+  }
 }
 
 #party .content {

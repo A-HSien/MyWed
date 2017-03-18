@@ -16,27 +16,25 @@ export class AnnounceController {
         this.setSelfiePortrait(scrollMagicController);
         this.setCountdownClock();
         this.setMap(windowWidth);
-        // this.setBackgroundTween(windowHeight, scrollMagicController)
     };
 
 
 
     private setSelfiePortrait(scrollMagicController: any) {
 
-        let height = $('.selfie-container').height();
-
         new ScrollMagic.Scene({
-            triggerElement: '#announce',
-            duration: height * 1.5
+            triggerElement: '#announce'
         }).addTo(scrollMagicController)
             .on('enter', () => {
+                const height = $('.selfie-container').height();
                 $('.selfie-content').height(height);
-                TweenMax.to('#announce .selfie-container-left', 1, { css: { 'left': "20%" } });
-                TweenMax.to('#announce .selfie-container-right', 1, { css: { 'right': "20%" } });
+                $('#announce .selfie-container-left').css('left', '');
+                $('#announce .selfie-container-right').css('right', '');
+                console.log('in');
             }).on('leave', () => {
-                height = $('.selfie-container').height();
-                TweenMax.to('#announce .selfie-container-left', 1, { css: { 'left': "0" } });
-                TweenMax.to('#announce .selfie-container-right', 1, { css: { 'right': "0" } });
+                $('#announce .selfie-container-left').css('left', '0');
+                $('#announce .selfie-container-right').css('right', '0');
+                console.log('out');
             });
 
     };
@@ -46,31 +44,11 @@ export class AnnounceController {
         new CountdownClock('clockdiv', deadline);
     };
 
-    private setBackgroundTween(
-        windowHeight: number,
-        scrollMagicController: any
-    ) {
-        const sectionName = '#announce';
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionName,
-            triggerHook: "onEnter",
-            duration: windowHeight + $(sectionName).height(),
-            offset: 0
-        })
-            .setTween('#announce-background', {
-                css: { y: '0%' },
-                ease: Linear.easeNone
-            })
-            .addTo(scrollMagicController)
-            .on("enter leave", e => {
-            });
-    };
 
     private setMap(windowWidth: number) {
         const location = '24.984038,121.5379173';
         const size = windowWidth;
-        const styles = this.toStaticMapStyle([
+        const styles = toStaticMapStyle([
             {
                 "featureType": "road",
                 "stylers": [
@@ -171,25 +149,27 @@ export class AnnounceController {
         var mapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=${size}x350&scale=2&zoom=12&center=${location}&style=${styles}&key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs`;
 
         $('.map').attr('src', mapUrl);
+
+        function toStaticMapStyle(styles) {
+            var result = [];
+            styles.forEach(function (v, i, a) {
+                var style = '';
+                if (v.stylers.length > 0) { // Needs to have a style rule to be valid.
+                    style += (v.hasOwnProperty('featureType') ? 'feature:' + v.featureType : 'feature:all') + '|';
+                    style += (v.hasOwnProperty('elementType') ? 'element:' + v.elementType : 'element:all') + '|';
+                    v.stylers.forEach(function (val, i, a) {
+                        var propertyname = Object.keys(val)[0];
+                        var propertyval = val[propertyname].toString().replace('#', '0x');
+                        style += propertyname + ':' + propertyval + '|';
+                    });
+                }
+                result.push('style=' + encodeURIComponent(style))
+            });
+            return result.join('&');
+        };
     };
 
-    private toStaticMapStyle(styles) {
-        var result = [];
-        styles.forEach(function (v, i, a) {
-            var style = '';
-            if (v.stylers.length > 0) { // Needs to have a style rule to be valid.
-                style += (v.hasOwnProperty('featureType') ? 'feature:' + v.featureType : 'feature:all') + '|';
-                style += (v.hasOwnProperty('elementType') ? 'element:' + v.elementType : 'element:all') + '|';
-                v.stylers.forEach(function (val, i, a) {
-                    var propertyname = Object.keys(val)[0];
-                    var propertyval = val[propertyname].toString().replace('#', '0x');
-                    style += propertyname + ':' + propertyval + '|';
-                });
-            }
-            result.push('style=' + encodeURIComponent(style))
-        });
-        return result.join('&');
-    };
+
 };
 
 class CountdownClock {
