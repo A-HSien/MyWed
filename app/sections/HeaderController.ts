@@ -3,7 +3,7 @@ declare const ScrollMagic: any;
 declare const TweenMax: any;
 declare const PIXI: any;
 
-import {SectionState} from '../SectionState.enum';
+import { SectionState } from '../SectionState.enum';
 
 
 export class HeaderController {
@@ -86,7 +86,7 @@ export class HeaderController {
 
     private playVideo() {
 
-        const {videoEle, renderer, stage, texture } = this;
+        const { videoEle, renderer, stage, texture } = this;
         const videoSource = texture.baseTexture.source;
 
         $(videoEle).fadeIn(2000);
@@ -125,7 +125,7 @@ export class HeaderController {
 
         new ScrollMagic.Scene({
             triggerElement: '#header img',
-            triggerHook:'0.2',
+            triggerHook: '0.2',
             duration: windowHeight,
             offset: 0
         })
