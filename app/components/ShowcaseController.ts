@@ -5,7 +5,7 @@ export class ShowcaseController {
 
     constructor(
     ) {
-        $('body').on('click', '.js-showcase-asset', this.onAssetsClicked.bind(this));
+        $('#wrapper').on('click', '.js-showcase-asset', this.onAssetsClicked.bind(this));
         $('#showcase').on('click', this.onShowcaseClicked.bind(this));
     };
 
