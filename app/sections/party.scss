@@ -1,0 +1,109 @@
+
+    #party .content {
+        width: 30rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+        #party .content .card {
+            background-color: rgba(255,255,255,0.1);
+        margin: 0.5rem;
+        }
+
+
+#clock-container {
+    overflow: hidden;
+}
+
+#clockdiv {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 3rem 0;
+    text-align: center;
+    z-index: 1;
+}
+
+
+    #clockdiv > div {
+        width: 6rem;
+        height: 6rem;
+        padding: 1.2rem;
+        margin: 0.3rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        color: #fff;
+        text-shadow: 0px 0px 12px #404040;
+    }
+
+
+        #clockdiv > div > span {
+            width: 100%;
+            font-size: 1.6rem;
+            display: inline-block;
+        }
+
+        #clockdiv > div > .smalltext {
+            padding-top: 5px;
+            font-size: 0.8rem;
+        }
+
+@include media-breakpoint-down("sm") {
+    #clockdiv {
+        width: 6rem;
+    }
+}
+
+#map-container {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+    #map-container > .map {
+        position: absolute;
+        max-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 3px;
+    }
+
+    #map-container > .map-content {
+        z-index: 100;
+        text-shadow: 0px 0px 12px #404040;
+        padding: 100px 0 200px 0;
+    }
+
+    #map-container > .location-marker {
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+@keyframes zooming-marker {
+    from {
+        width: 80px;
+        height: 80px;
+    }
+
+    to {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+#map-container > .location-marker-animation {
+    border: 3px rgba(255,255,255,0.6) solid;
+    border-radius: 100px;
+    animation-duration: 2s;
+    animation-name: zooming-marker;
+    animation-iteration-count: infinite;
+}

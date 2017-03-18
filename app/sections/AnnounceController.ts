@@ -16,19 +16,29 @@ export class AnnounceController {
         this.setSelfiePortrait(scrollMagicController);
         this.setCountdownClock();
         this.setMap(windowWidth);
-       // this.setBackgroundTween(windowHeight, scrollMagicController)
+        // this.setBackgroundTween(windowHeight, scrollMagicController)
     };
 
 
+
     private setSelfiePortrait(scrollMagicController: any) {
+
+        let height = $('.selfie-container').height();
+
         new ScrollMagic.Scene({
             triggerElement: '#announce',
-        }).setTween(TweenMax.to('#announce .selfie-left', 1, { css: { 'left': "0" } }))
-            .addTo(scrollMagicController);
-        new ScrollMagic.Scene({
-            triggerElement: '#announce',
-        }).setTween(TweenMax.to('#announce .selfie-right', 1, { css: { 'right': "0" } }))
-            .addTo(scrollMagicController);
+            duration: height * 1.5
+        }).addTo(scrollMagicController)
+            .on('enter', () => {
+                $('.selfie-content').height(height);
+                TweenMax.to('#announce .selfie-container-left', 1, { css: { 'left': "20%" } });
+                TweenMax.to('#announce .selfie-container-right', 1, { css: { 'right': "20%" } });
+            }).on('leave', () => {
+                height = $('.selfie-container').height();
+                TweenMax.to('#announce .selfie-container-left', 1, { css: { 'left': "0" } });
+                TweenMax.to('#announce .selfie-container-right', 1, { css: { 'right': "0" } });
+            });
+
     };
 
     private setCountdownClock() {
@@ -61,101 +71,101 @@ export class AnnounceController {
         const location = '24.984038,121.5379173';
         const size = windowWidth;
         const styles = this.toStaticMapStyle([
-       {
-        "featureType": "road",
-        "stylers": [
             {
-                "hue": "#5e00ff"
+                "featureType": "road",
+                "stylers": [
+                    {
+                        "hue": "#5e00ff"
+                    },
+                    {
+                        "saturation": -79
+                    }
+                ]
             },
             {
-                "saturation": -79
+                "featureType": "poi",
+                "stylers": [
+                    {
+                        "saturation": -78
+                    },
+                    {
+                        "hue": "#6600ff"
+                    },
+                    {
+                        "lightness": -47
+                    },
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "stylers": [
+                    {
+                        "lightness": 22
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "stylers": [
+                    {
+                        "hue": "#6600ff"
+                    },
+                    {
+                        "saturation": -11
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "stylers": [
+                    {
+                        "saturation": -65
+                    },
+                    {
+                        "hue": "#1900ff"
+                    },
+                    {
+                        "lightness": 8
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "stylers": [
+                    {
+                        "weight": 1.3
+                    },
+                    {
+                        "lightness": 30
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    },
+                    {
+                        "hue": "#5e00ff"
+                    },
+                    {
+                        "saturation": -16
+                    }
+                ]
+            },
+            {
+                "featureType": "transit.line",
+                "stylers": [
+                    {
+                        "saturation": -72
+                    }
+                ]
             }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "saturation": -78
-            },
-            {
-                "hue": "#6600ff"
-            },
-            {
-                "lightness": -47
-            },
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "stylers": [
-            {
-                "lightness": 22
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "stylers": [
-            {
-                "hue": "#6600ff"
-            },
-            {
-                "saturation": -11
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "saturation": -65
-            },
-            {
-                "hue": "#1900ff"
-            },
-            {
-                "lightness": 8
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "stylers": [
-            {
-                "weight": 1.3
-            },
-            {
-                "lightness": 30
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#5e00ff"
-            },
-            {
-                "saturation": -16
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "stylers": [
-            {
-                "saturation": -72
-            }
-        ]
-    }
-            ]);
+        ]);
 
 
         var mapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=${size}x350&scale=2&zoom=12&center=${location}&style=${styles}&key=AIzaSyDCtN623rQpU2ARtvy-Uhzr-S7xfn5QYCs`;

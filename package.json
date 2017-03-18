@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "lite-server",
     "build": "tsc && npm run sass",
-    "sass": "node-sass --output-style expanded --source-map true --precision 6 index.scss index.css"
+    "sass": "node-sass --output-style expanded --source-map true app/all.scss index.css"
   },
   "devDependencies": {
     "bootstrap": "~4.0.0-alpha.6",

@@ -14,16 +14,18 @@ export class BandController {
         windowHeight: number,
         windowWidth: number
     ) {
+        const sectionH = $(this.sectionName).height();
+        const duration = windowHeight + sectionH;
 
         new ScrollMagic.Scene({
             triggerElement: this.sectionName,
-            triggerHook: "onEnter",
-            duration: windowHeight + $(this.sectionName).height(),
+            triggerHook: 1,
+            duration: duration,
         }).setTween(`${this.sectionName} .parallax-scrolling-background`, {
-            css: { y: '0%' },
+            css: { transform: 'translateY(0)' },
             ease: Linear.easeNone
         }).addTo(scrollMagicController);
     };
 
-  
+
 };
