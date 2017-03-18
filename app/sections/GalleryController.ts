@@ -62,7 +62,7 @@ export class GalleryController {
         this.photos.forEach((photo) => {
             const src = `${thumbnailPath}${photo}`;
             const $img = $(`<img src="${src}" />`);
-            
+
             const $asset = $(`<div class="photo js-showcase-asset" data-image-url="${galleryPath}${photo}">`)
                 .css('background-image', `url('${src}')`)
                 .hide();

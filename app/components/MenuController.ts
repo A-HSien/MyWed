@@ -1,4 +1,5 @@
 ﻿declare const $: any;
+import * as Utilities from '../Utilities';
 import { FullWindowToggleController } from './FullWindowToggleController';
 
 export class MenuController {
@@ -23,7 +24,7 @@ export class MenuController {
         const offsetTop = $(target).offset().top;
         const currentOffsetTop = $(window).scrollTop();
         const offset = Math.max(offsetTop, currentOffsetTop) - Math.min(offsetTop, currentOffsetTop);
-        $('html, body').animate({ scrollTop: offsetTop }, offset * 0.5);
+        Utilities.scrollTo(target, offset * 0.5)
     };
 
     adjustMenuItems() {
