@@ -45,7 +45,7 @@ var StoryController = (function () {
         this.photos.forEach(function (photo) {
             var src = "" + thumbnailPath + photo + ".jpg";
             var $img = $("<img src=\"" + src + "\" />");
-            var $asset = $("<div class=\"photo js-showcase-asset\" data-image-url=\"" + galleryPath + photo + ".jpg\">")
+            var $asset = $("<div class=\"photo js-showcase-asset\" data-asset-url=\"" + galleryPath + photo + ".jpg\">")
                 .css('background-image', "url(" + src + ")");
             $img.on('load', function (e) {
                 _this.setThumbnail($asset);

@@ -145,15 +145,6 @@ section {
   opacity: 0;
 }
 
-#showcase .photo {
-  margin-top: 5%;
-  height: 80%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: contain;
-  background-size: contain;
-}
-
 /* full-window end */
 /* parallax-scrolling */
 .parallax-scrolling-container {
@@ -262,6 +253,16 @@ section {
   90% {
     stroke: #ffa700;
   }
+}
+
+#showcase .asset {
+  margin-top: 5%;
+  height: 80%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: contain;
+  background-size: contain;
 }
 
 #header {

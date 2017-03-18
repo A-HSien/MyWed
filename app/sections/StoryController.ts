@@ -59,7 +59,7 @@ export class StoryController {
             const src = `${thumbnailPath}${photo}.jpg`;
             const $img = $(`<img src="${src}" />`);
 
-            const $asset = $(`<div class="photo js-showcase-asset" data-image-url="${galleryPath}${photo}.jpg">`)
+            const $asset = $(`<div class="photo js-showcase-asset" data-asset-url="${galleryPath}${photo}.jpg">`)
                 .css('background-image', `url(${src})`);
            
             $img.on('load', (e) => {

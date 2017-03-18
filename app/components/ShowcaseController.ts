@@ -11,23 +11,29 @@ export class ShowcaseController {
 
     onAssetsClicked(e: any) {
 
-        alert('showcase');
-
         FullWindowToggleController.openFullWindowComponent(FullWindowComponentType.Showcase);
 
         const $ele = $(e.currentTarget);
+
         if ($ele.hasClass('photo')) {
-            const imageUrl = $ele.data('image-url');
+            const assetUrl = $ele.data('asset-url');
 
-
-            const $asset = $(`<div class="photo">`)
-                .css('background-image', `url(${imageUrl})`);
-
-            $('#showcase').html($asset);
+            let $asset;
+            if ($ele.hasClass('isVideo')) {
+                $asset = $(`<video class="asset" src="${assetUrl}" controls>`);
+            } else {
+                $asset = $(`<div class="asset">`)
+                    .css('background-image', `url(${assetUrl})`);
+            }
+            if ($asset) {
+                $('#showcase').html($asset);
+                return;
+            }
         }
+        this.onShowcaseClicked();
     };
 
-    onShowcaseClicked(e: any) {
+    onShowcaseClicked(e?: any) {
         FullWindowToggleController.closeAllFullWindowComponents();
     };
 
