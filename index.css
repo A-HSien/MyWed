@@ -95,12 +95,26 @@ section {
 }
 
 .assets-content .photo {
+  position: relative;
   width: 12.5%;
   padding: 6.25% 0;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.assets-content .isVideo:before {
+  content: "\f144";
+  font-family: FontAwesome;
+  font-size: 5rem;
+  color: #fff;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {
@@ -435,14 +449,14 @@ section {
 }
 
 #map-container > .map-content {
-  z-index: 100;
+  z-index: 10;
   text-shadow: 0px 0px 12px #404040;
   padding: 100px 0 200px 0;
 }
 
 #map-container > .location-marker {
   position: absolute;
-  z-index: 100;
+  z-index: 10;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);

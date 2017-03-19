@@ -18,7 +18,7 @@ export class GalleryController {
         'J002190-0215.jpg', 'J002190-0222.jpg'
     ];
     private videos = [
-        'forest'
+        'blessing', 'forest', 'happy'
     ];
 
     constructor(
@@ -52,11 +52,24 @@ export class GalleryController {
         if (this.isThumbnailInitiated) return;
         this.isThumbnailInitiated = true;
 
+        //videos part
+        this.videos.forEach((video) => {
+            const path = `assets/video/${video}`;
+            const $img = $(`<img src="${path}.jpg" />`);
+
+            const $asset = $(`<div class="photo isVideo js-showcase-asset" data-asset-url="${path}.mp4">`)
+                .css('background-image', `url('${path}.jpg')`)
+                .hide();
+
+            $img.on('load', (e) => {
+                this.setThumbnail($asset);
+            });
+        });
+
+        //photo part
         const height = $(window).height() as number;
         const width = $(window).width() as number;
         const size = (height > width) ? height : width;
-
-        //photo part
         let folder = 1920;
         [1920, 1080, 720, 360].forEach(e => {
             folder = (e > size) ? e : folder;
@@ -71,20 +84,6 @@ export class GalleryController {
 
             const $asset = $(`<div class="photo js-showcase-asset" data-asset-url="${galleryPath}${photo}">`)
                 .css('background-image', `url('${src}')`)
-                .hide();
-
-            $img.on('load', (e) => {
-                this.setThumbnail($asset);
-            });
-        });
-
-        //videos part
-        this.videos.forEach((video) => {
-            const path = `assets/video/${video}`;
-            const $img = $(`<img src="${path}.jpg" />`);
-
-            const $asset = $(`<div class="photo isVideo js-showcase-asset" data-asset-url="${path}.mp4">`)
-                .css('background-image', `url('${path}.jpg')`)
                 .hide();
 
             $img.on('load', (e) => {
