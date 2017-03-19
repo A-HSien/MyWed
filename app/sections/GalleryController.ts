@@ -55,12 +55,12 @@ export class GalleryController {
         //videos part
         this.videos.forEach((video) => {
             const path = `assets/video/${video}`;
-            const $img = $(`<img src="${path}.jpg" />`);
 
             const $asset = $(`<div class="photo isVideo js-showcase-asset" data-asset-url="${path}.mp4">`)
                 .css('background-image', `url('${path}.jpg')`)
                 .hide();
 
+            const $img = $(`<img src="${path}.jpg" />`);
             $img.on('load', (e) => {
                 this.setThumbnail($asset);
             });
@@ -80,12 +80,12 @@ export class GalleryController {
 
         this.photos.forEach((photo) => {
             const src = `${thumbnailPath}${photo}`;
-            const $img = $(`<img src="${src}" />`);
 
             const $asset = $(`<div class="photo js-showcase-asset" data-asset-url="${galleryPath}${photo}">`)
                 .css('background-image', `url('${src}')`)
                 .hide();
 
+            const $img = $(`<img src="${src}" />`);
             $img.on('load', (e) => {
                 this.setThumbnail($asset);
             });
