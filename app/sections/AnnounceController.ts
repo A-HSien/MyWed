@@ -7,6 +7,8 @@ declare const Linear: any;
 
 export class AnnounceController {
 
+    private sectionName = '#announce';
+
     constructor(
         scrollMagicController: any,
         windowHeight: number,
@@ -22,20 +24,13 @@ export class AnnounceController {
 
     private setSelfiePortrait(scrollMagicController: any) {
 
+
         new ScrollMagic.Scene({
-            triggerElement: '#announce'
-        }).addTo(scrollMagicController)
-            .on('enter', () => {
-                const height = $('.selfie-container').height();
-                $('.selfie-content').height(height);
-                $('#announce .selfie-container-left').css('left', '');
-                $('#announce .selfie-container-right').css('right', '');
-                console.log('in');
-            }).on('leave', () => {
-                $('#announce .selfie-container-left').css('left', '0');
-                $('#announce .selfie-container-right').css('right', '0');
-                console.log('out');
-            });
+            triggerElement: this.sectionName,
+
+        }).setTween(this.sectionName + ' .selfie-content-space', {
+            css: { width: '0' }
+        }).addTo(scrollMagicController);
 
     };
 

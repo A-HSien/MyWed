@@ -1,0 +1,30 @@
+#program-container {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 0px 12px #404040;
+    .programs {
+        display: flex;
+        justify-content: space-around;
+        .program {
+            position: relative;
+            margin: 2rem;
+            width: 30%;
+            min-width: 18rem;
+            padding: 5rem 2rem;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+            .background-image {
+                opacity: 0.6;
+            }
+        }
+    }
+    @include media-breakpoint-down("lg") {
+        .programs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .program {
+                width: 50%;
+            }
+        }
+    }
+}

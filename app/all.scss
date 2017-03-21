@@ -1,13 +1,14 @@
 ﻿@import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
-
-@import "app/base";
-
+@import "app/styles/base";
+@import "app/styles/assets";
+@import "app/styles/full-window";
+@import "app/styles/parallax-scrolling";
 @import "app/components/menu";
 @import "app/components/loadingComponent";
 @import "app/components/showcaseController";
-
 @import "app/sections/header";
 @import "app/sections/announce";
+@import "app/sections/program";
 @import "app/sections/party";
 @import "app/sections/rsvp";

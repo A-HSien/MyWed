@@ -18,7 +18,7 @@ export class GalleryController {
         'J002190-0215.jpg', 'J002190-0222.jpg'
     ];
     private videos = [
-        'blessing', 'forest', 'happy'
+        'blessing', 'forest'
     ];
 
     constructor(

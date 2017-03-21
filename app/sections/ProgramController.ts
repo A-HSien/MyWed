@@ -4,9 +4,9 @@ declare const TweenMax: any;
 declare const Linear: any;
 
 
-export class BandController {
+export class ProgramController {
 
-    private sectionName = '#band-container';
+    private sectionName = '#program-container';
     private isThumbnailInitiated = false;
 
     constructor(

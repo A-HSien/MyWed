@@ -10,6 +10,7 @@ export class ShowcaseController {
     };
 
     onAssetsClicked(e: any) {
+        window.history.pushState(null, null, '#showcase');
 
         FullWindowToggleController.openFullWindowComponent(FullWindowComponentType.Showcase);
 

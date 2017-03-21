@@ -10,7 +10,7 @@ import { AnnounceController } from './sections/AnnounceController';
 import { GalleryController } from './sections/GalleryController';
 import { StoryController } from './sections/StoryController';
 import { RSVPController } from './sections/RSVPController';
-import { BandController } from './sections/BandController';
+import { ProgramController } from './sections/ProgramController';
 
 
 //db init
@@ -34,4 +34,4 @@ new AnnounceController(scrollMagicController, windowHeight, windowWidth);
 new GalleryController(scrollMagicController, windowHeight, windowWidth);
 new StoryController(scrollMagicController, windowHeight, windowWidth);
 new RSVPController(scrollMagicController, windowHeight, windowWidth);
-new BandController(scrollMagicController, windowHeight, windowWidth);
+new ProgramController(scrollMagicController, windowHeight, windowWidth);

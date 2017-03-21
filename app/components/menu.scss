@@ -3,22 +3,18 @@
     margin-right: auto;
     width: 180px;
     list-style: none;
-
-
-     > li {
+    >li {
         line-height: 2rem;
         font-size: 1.2rem;
-        color: rgba(255,255,255,0.8);
+        color: rgba(255, 255, 255, 0.8);
         margin: 8px 0;
     }
-
     @include media-breakpoint-down("sm") {
         #menu ul {
             padding: 10px;
         }
-
-            #menu ul > li {
-                font-size: 1.0rem;
-            }
+        #menu ul>li {
+            font-size: 1.0rem;
+        }
     }
 }
