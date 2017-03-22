@@ -3,92 +3,14 @@ var SectionState_enum_1 = require('../SectionState.enum');
 var HeaderController = (function () {
     function HeaderController(scrollMagicController, windowHeight, windowWidth) {
         this.sectionState = SectionState_enum_1.SectionState.Inside;
-        //this.monitorSectionState(scrollMagicController, windowHeight);
-        //this.setVideo();
         this.setTweenForImageIcon(scrollMagicController, windowHeight);
     }
     ;
-    HeaderController.prototype.monitorSectionState = function (scrollMagicController, windowHeight) {
-        var _this = this;
-        var sectionName = '#header';
-        new ScrollMagic.Scene({
-            triggerElement: sectionName,
-            duration: (windowHeight / 2),
-            offset: 20
-        })
-            .addTo(scrollMagicController)
-            .on("enter leave", function (e) {
-            if (e.type === "enter") {
-                _this.sectionState = SectionState_enum_1.SectionState.Inside;
-                _this.playVideo();
-            }
-            else {
-                _this.sectionState = SectionState_enum_1.SectionState.Outside;
-            }
-        });
-    };
-    ;
-    HeaderController.prototype.setVideo = function () {
-        /** video */
-        var videoEle = this.videoEle = document.getElementById('video');
-        videoEle.innerHTML = '';
-        var rate = 1280 / 720;
-        var h = videoEle.clientHeight;
-        var w = h * rate;
-        if (videoEle.clientWidth > (w)) {
-            w = videoEle.clientWidth;
-            h = w / rate;
-        }
-        var renderer = this.renderer = PIXI.autoDetectRenderer(w, h, { transparent: true });
-        videoEle.appendChild(renderer.view);
-        // create a video texture from a path
-        var texture = this.texture = PIXI.Texture.fromVideo('assets/video/forest.mp4');
-        var videoSource = texture.baseTexture.source;
-        //if (videoSource.networkState !== 0)
-        //    videoSource.play();
-        // create a new Sprite using the video texture
-        var videoSprite = new PIXI.Sprite(texture);
-        videoSprite.width = renderer.width;
-        videoSprite.height = renderer.height;
-        // create the root of the scene graph
-        var stage = this.stage = new PIXI.Container();
-        stage.addChild(videoSprite);
-    };
-    ;
-    HeaderController.prototype.playVideo = function () {
-        var _this = this;
-        var _a = this, videoEle = _a.videoEle, renderer = _a.renderer, stage = _a.stage, texture = _a.texture;
-        var videoSource = texture.baseTexture.source;
-        $(videoEle).fadeIn(2000);
-        $('#header').removeClass('img-background');
-        if (videoSource.ended && videoSource.paused) {
-            videoSource.currentTime = 0;
-            videoSource.play();
-        }
-        var animate = function () {
-            renderer.render(stage);
-            if ((videoSource.ended && videoSource.paused) ||
-                _this.sectionState === SectionState_enum_1.SectionState.Outside) {
-                $(videoEle).fadeOut(2000);
-                $('#header').addClass('img-background');
-                return;
-            }
-            requestAnimationFrame(animate);
-        };
-        //videoSource.onended = (() => animate());
-        animate();
-    };
-    ;
-    //private initAnimate() {
-    //    $(videoEle).fadeIn(2000);
-    //    $('#header').removeClass('img-background');
-    //};
     HeaderController.prototype.setTweenForImageIcon = function (scrollMagicController, windowHeight) {
         new ScrollMagic.Scene({
             triggerElement: '#header img',
             triggerHook: '0.2',
-            duration: windowHeight,
-            offset: 0
+            duration: windowHeight
         })
             .setTween(TweenMax.to('#header img', 1, {
             autoAlpha: 0,
@@ -102,4 +24,4 @@ var HeaderController = (function () {
 }());
 exports.HeaderController = HeaderController;
 ;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSGVhZGVyQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkhlYWRlckNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUtBLGtDQUE2QixzQkFBc0IsQ0FBQyxDQUFBO0FBR3BEO0lBSUksMEJBQ0kscUJBQTBCLEVBQzFCLFlBQW9CLEVBQ3BCLFdBQW1CO1FBTGYsaUJBQVksR0FBaUIsZ0NBQVksQ0FBQyxNQUFNLENBQUM7UUFPckQsZ0VBQWdFO1FBQ2hFLGtCQUFrQjtRQUNsQixJQUFJLENBQUMsb0JBQW9CLENBQUMscUJBQXFCLEVBQUUsWUFBWSxDQUFDLENBQUM7SUFDbkUsQ0FBQzs7SUFHTyw4Q0FBbUIsR0FBM0IsVUFBNEIscUJBQTBCLEVBQUUsWUFBb0I7UUFBNUUsaUJBa0JDO1FBaEJHLElBQU0sV0FBVyxHQUFHLFNBQVMsQ0FBQztRQUU5QixJQUFJLFdBQVcsQ0FBQyxLQUFLLENBQUM7WUFDbEIsY0FBYyxFQUFFLFdBQVc7WUFDM0IsUUFBUSxFQUFFLENBQUMsWUFBWSxHQUFHLENBQUMsQ0FBQztZQUM1QixNQUFNLEVBQUUsRUFBRTtTQUNiLENBQUM7YUFDRyxLQUFLLENBQUMscUJBQXFCLENBQUM7YUFDNUIsRUFBRSxDQUFDLGFBQWEsRUFBRSxVQUFBLENBQUM7WUFDaEIsRUFBRSxDQUFDLENBQUMsQ0FBQyxDQUFDLElBQUksS0FBSyxPQUFPLENBQUMsQ0FBQyxDQUFDO2dCQUNyQixLQUFJLENBQUMsWUFBWSxHQUFHLGdDQUFZLENBQUMsTUFBTSxDQUFDO2dCQUN4QyxLQUFJLENBQUMsU0FBUyxFQUFFLENBQUM7WUFDckIsQ0FBQztZQUFDLElBQUksQ0FBQyxDQUFDO2dCQUNKLEtBQUksQ0FBQyxZQUFZLEdBQUcsZ0NBQVksQ0FBQyxPQUFPLENBQUM7WUFDN0MsQ0FBQztRQUNMLENBQUMsQ0FBQyxDQUFDO0lBQ1gsQ0FBQzs7SUFJTyxtQ0FBUSxHQUFoQjtRQUVJLFlBQVk7UUFDWixJQUFNLFFBQVEs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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSGVhZGVyQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkhlYWRlckNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUtBLGtDQUE2QixzQkFBc0IsQ0FBQyxDQUFBO0FBR3BEO0lBSUksMEJBQ0kscUJBQTBCLEVBQzFCLFlBQW9CLEVBQ3BCLFdBQW1CO1FBTGYsaUJBQVksR0FBaUIsZ0NBQVksQ0FBQyxNQUFNLENBQUM7UUFPckQsSUFBSSxDQUFDLG9CQUFvQixDQUFDLHFCQUFxQixFQUFFLFlBQVksQ0FBQyxDQUFDO0lBQ25FLENBQUM7O0lBR08sK0NBQW9CLEdBQTVCLFVBQTZCLHFCQUEwQixFQUFFLFlBQW9CO1FBRXpFLElBQUksV0FBVyxDQUFDLEtBQUssQ0FBQztZQUNsQixjQUFjLEVBQUUsYUFBYTtZQUM3QixXQUFXLEVBQUUsS0FBSztZQUNsQixRQUFRLEVBQUUsWUFBWTtTQUN6QixDQUFDO2FBQ0csUUFBUSxDQUFDLFFBQVEsQ0FBQyxFQUFFLENBQUMsYUFBYSxFQUFFLENBQUMsRUFBRTtZQUNwQyxTQUFTLEVBQUUsQ0FBQztZQUNaLEtBQUssRUFBRSxHQUFHO1lBQ1YsT0FBTyxFQUFFLElBQUk7U0FDaEIsQ0FBQyxDQUFDO2FBQ0YsS0FBSyxDQUFDLHFCQUFxQixDQUFDLENBQUM7SUFDdEMsQ0FBQzs7SUFDTCx1QkFBQztBQUFELENBQUMsQUEzQkQsSUEyQkM7QUEzQlksd0JBQWdCLG1CQTJCNUIsQ0FBQTtBQUFBLENBQUMifQ==

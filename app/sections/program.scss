@@ -19,7 +19,6 @@
     }
     @include media-breakpoint-down("lg") {
         .programs {
-            display: flex;
             flex-direction: column;
             align-items: center;
             .program {
