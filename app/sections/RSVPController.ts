@@ -34,13 +34,14 @@ export class RSVPController {
         const form = this.getAndCheckForm();
 
         if (form.errors.length > 0) {
-            Utilities.scrollTo(form.errors[0].$ele);
+            Utilities.scrollTo($(form.errors[0].$ele).parent().parent());
             return;
         }
 
         const db = firebase.database();
         const table = db.ref('/rsvp');
         table.push(form.data);
+        this.$ele.find('.alert').fadeIn();
     };
 };
 
@@ -54,6 +55,7 @@ interface IData {
     address: string;
     phoneNumber: string;
     vegetarianNumber: string;
+    time: string;
 }
 
 class Form {
@@ -78,6 +80,7 @@ class Form {
             address: this.get('input[name=address]'),
             phoneNumber: this.get('input[name=phone-number]'),
             vegetarianNumber: this.get('input[name=vegetarian-number]'),
+            time: new Date().toISOString()
         }
     };
 
