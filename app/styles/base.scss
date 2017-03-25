@@ -35,7 +35,7 @@ section {
 }
 
 .blur-White:before {
-    z-index: 50;
+    z-index: -1;
     content: '';
     position: absolute;
     top: 0;
@@ -46,7 +46,7 @@ section {
 }
 
 .blur-black:before {
-    z-index: 50;
+    z-index: -1;
     content: '';
     position: absolute;
     top: 0;
