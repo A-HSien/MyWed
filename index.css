@@ -204,6 +204,7 @@ section {
 }
 
 #menu ul > li {
+  cursor: pointer;
   line-height: 2rem;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);

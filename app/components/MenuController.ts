@@ -10,6 +10,9 @@ export class MenuController {
 
         $('#full-window-toggle .fa-bars').on('click', this.onHamburgerClicked.bind(this));
         $('#menu').on('click', 'ul > li', this.onMenuItemsClicked.bind(this));
+        $('#menu').on('click', e => {
+            FullWindowToggleController.closeAllFullWindowComponents();
+        });
     };
 
     onHamburgerClicked() {
