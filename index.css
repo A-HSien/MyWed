@@ -133,10 +133,17 @@ section {
   top: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .assets-content .photo {
     width: 16.66%;
     padding: 8.33% 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .assets-content .photo {
+    width: 25%;
+    padding: 12.5% 0;
   }
 }
 
@@ -224,8 +231,8 @@ section {
 
 .loader .circular {
   animation: rotate 2s linear infinite;
-  height: 60%;
-  width: 60%;
+  height: 35%;
+  width: 35%;
   transform-origin: center center;
   position: absolute;
   top: 0;
@@ -508,6 +515,10 @@ section {
 
 #form-container .form-control-feedback {
   color: #b19ed6;
+}
+
+#tks-container img {
+  max-width: 80%;
 }
 
 /*# sourceMappingURL=index.css.map */

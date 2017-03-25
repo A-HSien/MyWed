@@ -10,17 +10,30 @@ export class StoryController {
     private sectionName = '#story-container';
     private isThumbnailInitiated = false;
     private photos = [
-        '201307', '201308',
-        '201312', '201401',
+        '201307',
+        '201308',
+        '201312',
+        '201401',
+        '201401-2',
         '201401-3',
-        '201401-4', '201402',
-        '201403', '201406',
-        '201407', '201501',
-        '201504', '201504-2',
-        '201507', '201601',
-        '201607', '20160928',
-        '20161126', '20161231',
-        '20161231-2', '20170101',
+        '201401-4',
+        '201402',
+        '201403',
+        '201406',
+        '201407',
+        '201501',
+        '201504',
+        '201504-2',
+        '201507',
+        '201601',
+        '201601-2',
+        '201605',
+        '201607',
+        '201609',
+        '201611',
+        '201612',
+        '201612-2',
+        '201701',
     ];
 
     constructor(
@@ -61,13 +74,13 @@ export class StoryController {
 
             const $asset = $(`<div class="photo js-showcase-asset" data-asset-url="${galleryPath}${photo}.jpg">`)
                 .css('background-image', `url(${src})`);
-           
+
             $img.on('load', (e) => {
                 this.setThumbnail($asset);
             });
         });
     };
-    
+
 
     private setThumbnail($asset) {
         const $loader = $(this.sectionName).find('.assets-content .loader').first();

@@ -31,10 +31,18 @@
     }
 }
 
-@include media-breakpoint-down("sm") {
+@include media-breakpoint-down("lg") {
     .assets-content .photo {
         width: 16.66%;
         padding: 8.33% 0;
+    }
+}
+
+
+@include media-breakpoint-down("md") {
+    .assets-content .photo {
+        width: 25%;
+        padding: 12.5% 0;
     }
 }
 

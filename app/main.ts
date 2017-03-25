@@ -11,6 +11,7 @@ import { GalleryController } from './sections/GalleryController';
 import { StoryController } from './sections/StoryController';
 import { RSVPController } from './sections/RSVPController';
 import { ProgramController } from './sections/ProgramController';
+import { PartyController } from './sections/PartyController';
 
 
 //db init
@@ -35,3 +36,4 @@ new GalleryController(scrollMagicController, windowHeight, windowWidth);
 new StoryController(scrollMagicController, windowHeight, windowWidth);
 new RSVPController(scrollMagicController, windowHeight, windowWidth);
 new ProgramController(scrollMagicController, windowHeight, windowWidth);
+new PartyController();
