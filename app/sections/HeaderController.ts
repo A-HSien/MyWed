@@ -33,4 +33,5 @@ export class HeaderController {
             }))
             .addTo(scrollMagicController);
     };
+
 };

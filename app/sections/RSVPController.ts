@@ -16,6 +16,7 @@ export class RSVPController {
     ) {
         this.$ele.find('input').on('change', this.getAndCheckForm.bind(this));
         this.$ele.find('.js-submit').on('click', this.submit.bind(this));
+        this.setReader();
     };
 
     private getAndCheckForm() {
@@ -41,8 +42,106 @@ export class RSVPController {
         const db = firebase.database();
         const table = db.ref('/rsvp');
         table.push(form.data);
+        this.$ele.find('.js-submit').hide();
         this.$ele.find('.alert').fadeIn();
     };
+
+
+    private setReader() {
+        const $ele = $('#wrapper');
+        $ele.on("dragover", this.stopPropagation.bind(this));
+        $ele.on("dragleave", this.stopPropagation.bind(this));
+
+        $ele.on("drop", (event) => {
+            this.stopPropagation(event);
+            const files = event.originalEvent.dataTransfer.files;
+            if (files && files.length && files.length > 0)
+                this.handleFile(files[0]);
+        });
+    };
+
+    private stopPropagation(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    };
+
+
+    private handleFile(file: any) {
+        if (!file || file.name.indexOf('.json') < 0) return;
+
+        const reader = new FileReader();
+        reader.onload = (file: any) => {
+            const rsvp = JSON.parse(file.target.result).rsvp;
+            const result = [];
+            Object.keys(rsvp).forEach(key => {
+                let item = rsvp[key];
+                item.key = key;
+                result.push(item);
+            });
+            this.showReport(result);
+        };
+        reader.readAsText(file);
+
+    };
+
+    private showReport(data: any[]) {
+        const heads = [
+            'time',
+            'name',
+            'willJoin',
+            'peopleNumber',
+            'vegetarianNumber',
+            'wantInvitationCard',
+            'address',
+            'phoneNumber',
+            'isGroomSide',
+        ];
+        const $table = $('<table class="table table-striped table-responsive">');
+
+        //thead
+        (() => {
+            const $thead = $('<thead class="thead-inverse">');
+            const $tr = $('<tr>');
+            heads.forEach(head => {
+                $tr.append(`<th>${head}</th>`);
+            });
+            $thead.append($tr);
+            $table.append($thead);
+        })();
+
+        //tbody
+        (() => {
+            const dic: { [key: string]: string } = {};
+            const $tbody = $('<tbody>');
+            data.forEach(e => {
+                const key = dic[e.name];
+                const value = JSON.stringify({
+                    name: e.name,
+                    willJoin: e.willJoin,
+                    peopleNumber: e.peopleNumber,
+                    vegetarianNumber: e.vegetarianNumber,
+                    wantInvitationCard: e.wantInvitationCard,
+                    address: e.address,
+                    phoneNumber: e.phoneNumber,
+                });
+                if (key && key === value) return;
+                dic[e.name] = value;
+
+                const $tr = $('<tr>');
+                heads.forEach(head => {
+                    $tr.append(`<td>${e[head]}</td>`);
+                });
+                $tbody.append($tr);
+            });
+            $table.append($tbody);
+        })();
+
+        const $report = $('#rsvp-report');
+        $report.append($table);
+        Utilities.scrollTo($report);
+    };
+
+
 };
 
 
