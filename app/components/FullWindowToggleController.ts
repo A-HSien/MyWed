@@ -4,6 +4,7 @@ export enum FullWindowComponentType {
     None = 0,
     Menu = 1,
     Showcase = 2,
+    ImageUploader = 3,
 };
 
 

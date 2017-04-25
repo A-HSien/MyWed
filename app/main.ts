@@ -12,12 +12,14 @@ import { StoryController } from './sections/StoryController';
 import { RSVPController } from './sections/RSVPController';
 import { ProgramController } from './sections/ProgramController';
 import { PartyController } from './sections/PartyController';
+import { ImgUploadController } from './sections/ImgUploadController';
 
 
 //db init
 const config = {
     apiKey: "AIzaSyCiAAj1bTaHLocP5P-PlNZ7dEz0BOxUAj0",
-    databaseURL: "https://mywed-f3944.firebaseio.com"
+    databaseURL: "https://mywed-f3944.firebaseio.com",
+    storageBucket: "mywed-f3944.appspot.com",
 };
 firebase.initializeApp(config);
 
@@ -37,3 +39,4 @@ new StoryController(scrollMagicController, windowHeight, windowWidth);
 new RSVPController(scrollMagicController, windowHeight, windowWidth);
 new ProgramController(scrollMagicController, windowHeight, windowWidth);
 new PartyController();
+new ImgUploadController(scrollMagicController, windowHeight, windowWidth)

@@ -90,6 +90,11 @@ section {
   text-align: center;
 }
 
+.white-text {
+  color: #fff;
+  text-shadow: 0px 0px 12px #404040;
+}
+
 .padding-top {
   padding-top: 5rem;
 }
@@ -361,11 +366,6 @@ section {
   padding: 0.5rem;
 }
 
-#program-container {
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0px 0px 12px #404040;
-}
-
 #program-container .programs {
   display: flex;
   justify-content: space-around;
@@ -426,8 +426,6 @@ section {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
-  color: #fff;
-  text-shadow: 0px 0px 12px #404040;
 }
 
 #clockdiv > div > span {
@@ -465,7 +463,6 @@ section {
 
 #map-container > .map-content {
   z-index: 10;
-  text-shadow: 0px 0px 12px #404040;
   padding: 100px 0 200px 0;
 }
 
@@ -517,6 +514,58 @@ section {
 
 #form-container .form-control-feedback {
   color: #b19ed6;
+}
+
+.img-upload-slides {
+  height: 80vh;
+  max-width: 80%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.img-upload-intro {
+  margin: 3rem auto;
+  max-width: 30rem;
+}
+
+.img-upload-zone {
+  text-align: center;
+}
+
+.img-upload-zone button {
+  color: #fff;
+}
+
+.img-upload-zone .img-input {
+  display: none;
+}
+
+.img-upload-zone .img-editor {
+  display: none;
+}
+
+.img-upload-zone .img-editor input {
+  background-color: transparent;
+  border-color: azure;
+}
+
+.img-upload-zone .img-editor .return-message {
+  color: #fff;
+}
+
+.img-upload-zone .image-editor-hidden {
+  width: 1rem;
+  height: 1rem;
+  z-index: -100;
+  opacity: 0;
+}
+
+.img-upload-zone .img-to-upload {
+  max-width: 80%;
+  margin: 3rem auto;
 }
 
 #tks-container img {
