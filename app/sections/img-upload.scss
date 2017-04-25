@@ -1,0 +1,44 @@
+.img-upload-slides {
+    height: 80vh;
+    max-width: 80%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+.img-upload-intro {
+    margin: 3rem auto;
+    max-width: 30rem;
+}
+
+.img-upload-zone {
+    text-align: center;
+    button {
+        color: #fff;
+    }
+    .img-input {
+        display: none;
+    }
+    .img-editor {
+        display: none;
+        input {
+            background-color: transparent;
+            border-color: azure
+        }
+        .return-message {
+            color: #fff;
+        }
+    }
+    .image-editor-hidden {
+        width: 1rem;
+        height: 1rem;
+        z-index: -100;
+        opacity: 0;
+    }
+    .img-to-upload {
+        max-width: 80%;
+        margin: 3rem auto;
+    }
+}
