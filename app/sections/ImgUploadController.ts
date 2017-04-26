@@ -122,9 +122,23 @@ export class ImgUploadController {
                 imageInfo.id = key;
                 return value[key];
             });
-            this.imageInfos = this.imageInfos.concat(newInfos);
+
+            this.imageInfos = this.imageInfos.concat(shuffle(newInfos));
 
             this.loadImage();
+
+            function shuffle(array) {
+                let ctr = array.length, temp, index;
+                
+                while (ctr > 0) {
+                    index = Math.floor(Math.random() * ctr);
+                    ctr--;
+                    temp = array[ctr];
+                    array[ctr] = array[index];
+                    array[index] = temp;
+                }
+                return array;
+            }
         })
     };
 
@@ -134,7 +148,7 @@ export class ImgUploadController {
         const storage = firebase.storage().ref();
         const imageInfo = this.imageInfos[0];
         const $section = $(this.sectionName);
-        $section.find('.js-image-info').text(`${imageInfo.author}: ${imageInfo.message}`);
+        $section.find('.js-image-info').text(`${imageInfo.author} :  ${imageInfo.message}`);
 
         storage.child(`image/${imageInfo.fileName}`).getDownloadURL().then(url => {
             const img = new Image();
@@ -152,7 +166,7 @@ export class ImgUploadController {
             3,
             { opacity: 1 }
         );
-        setTimeout(this.resetImage.bind(this), 12000);
+        setTimeout(this.resetImage.bind(this), 6000);
     };
 
     private resetImage() {
