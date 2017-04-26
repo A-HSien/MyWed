@@ -72,7 +72,7 @@ export class ImgUploadController {
                 $edotor.find('.img-to-upload').attr('src', data);
                 this.imageToUpload.file = file;
                 this.imageToUpload.data = data;
-                this.imageToUpload.fileName = file.name;
+                this.imageToUpload.fileName = `${new Date().toISOString()}_${file.name}`;
 
                 Utilities.scrollTo('.img-to-upload');
             };
