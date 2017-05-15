@@ -129,7 +129,7 @@ export class ImgUploadController {
 
             function shuffle(array) {
                 let ctr = array.length, temp, index;
-                
+
                 while (ctr > 0) {
                     index = Math.floor(Math.random() * ctr);
                     ctr--;
@@ -171,14 +171,8 @@ export class ImgUploadController {
 
     private resetImage() {
         this.imageInfos.push(this.imageInfos.shift());
-        TweenMax.to(
-            this.$photo,
-            1,
-            {
-                opacity: 0,
-                onComplete: this.loadImage.bind(this)
-            }
-        );
+        TweenMax.to(this.$photo, 1, { opacity: 0 });
+        this.loadImageInfos();
     };
 };
 
