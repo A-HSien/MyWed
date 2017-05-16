@@ -13,6 +13,7 @@ import { RSVPController } from './sections/RSVPController';
 import { ProgramController } from './sections/ProgramController';
 import { PartyController } from './sections/PartyController';
 import { ImgUploadController } from './sections/ImgUploadController';
+import { scrollTo } from './Utilities';
 
 
 //db init
@@ -40,3 +41,6 @@ new RSVPController(scrollMagicController, windowHeight, windowWidth);
 new ProgramController(scrollMagicController, windowHeight, windowWidth);
 new PartyController();
 new ImgUploadController(scrollMagicController, windowHeight, windowWidth)
+
+if (location.hash)
+    scrollTo(location.hash);
