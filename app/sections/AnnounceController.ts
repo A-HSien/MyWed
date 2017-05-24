@@ -35,7 +35,7 @@ export class AnnounceController {
     };
 
     private setCountdownClock() {
-        var deadline = new Date(2017, 6 - 1, 3); //2017-6-3
+        var deadline = new Date(2017, 6 - 1, 3, 19); //2017-6-3
         new CountdownClock('clockdiv', deadline);
     };
 
@@ -207,6 +207,7 @@ class CountdownClock {
 
     getTimeRemaining() {
         var t = Date.parse(this.endtime) - Date.parse(new Date().toString());
+        var t = (t < 0) ? 0 : t;
         var seconds = Math.floor((t / 1000) % 60);
         var minutes = Math.floor((t / 1000 / 60) % 60);
         var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
