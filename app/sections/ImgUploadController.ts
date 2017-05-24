@@ -46,6 +46,7 @@ export class ImgUploadController {
                     this.sectionState = SectionState.Inside;
                     this.loadImageInfos();
                 } else {
+                    clearTimeout(this.loopTask);
                     this.sectionState = SectionState.Outside;
                 }
             });
@@ -111,6 +112,8 @@ export class ImgUploadController {
     };
 
     private loadImageInfos() {
+        if (this.sectionState === SectionState.Outside) return;
+        
         firebase.database().ref('/image').once('value').then((snapshot) => {
             const value = snapshot.val();
             this.imageInfos.forEach(e => {
@@ -158,15 +161,17 @@ export class ImgUploadController {
             img.onerror = () => this.resetImage();
         });
     };
+    private loopTask;
 
     private setImage(src: string) {
+
         this.$photo.css('background-image', `url(${src})`);
         TweenMax.to(
             this.$photo,
-            3,
+            2,
             { opacity: 1 }
         );
-        setTimeout(this.resetImage.bind(this), 6000);
+        this.loopTask = setTimeout(this.resetImage.bind(this), 5000);
     };
 
     private resetImage() {
