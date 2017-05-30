@@ -129,7 +129,7 @@ export class ImgUploadController {
                 return value[key];
             });
 
-            this.imageInfos = this.imageInfos.concat(shuffle(newInfos));
+            this.imageInfos = shuffle(newInfos).concat(this.imageInfos);
 
             this.loadImage();
 
