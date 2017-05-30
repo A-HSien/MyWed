@@ -27,7 +27,7 @@ export class ImgUploadController {
         $section.on('click', '.js-submit', this.submit.bind(this));
 
         this.$photo = $section.find('.img-upload-slides');
-        $section.on('click','.js-next', () => {
+        $section.on('click', '.js-next', () => {
             this.setResetImageTask(0);
         });
 
@@ -48,7 +48,7 @@ export class ImgUploadController {
             .on("enter leave", e => {
                 if (e.type === "enter") {
                     this.sectionState = SectionState.Inside;
-                    this.loadImageInfos();
+                    this.setResetImageTask(0);
                 } else {
                     clearTimeout(this.loopTask);
                     this.sectionState = SectionState.Outside;
@@ -57,6 +57,7 @@ export class ImgUploadController {
     };
 
     private openFileSelector() {
+        clearTimeout(this.loopTask);
         $(this.sectionName).find('.img-input').click();
     };
 
@@ -111,8 +112,9 @@ export class ImgUploadController {
 
         setTimeout(() => {
             $section.find('.img-editor').fadeOut();
-            Utilities.scrollTo(this.sectionName);
-        }, 2000);
+            this.setResetImageTask(5000);
+            Utilities.scrollTo('#YouAndMe');
+        }, 1000);
     };
 
     private loadImageInfos() {
@@ -129,7 +131,10 @@ export class ImgUploadController {
                 return value[key];
             });
 
-            this.imageInfos = shuffle(newInfos).concat(this.imageInfos);
+            const inserAt = this.imageInfos.length > 0 ? 3 : 0;
+            shuffle(newInfos).forEach(e => {
+                this.imageInfos.splice(inserAt, 0, e);
+            });
 
             this.loadImage();
 
@@ -187,7 +192,8 @@ export class ImgUploadController {
     };
 
     private resetImage() {
-        this.imageInfos.push(this.imageInfos.shift());
+        if (this.imageInfos.length > 0)
+            this.imageInfos.push(this.imageInfos.shift());
         TweenMax.to(this.$photo, 1, { opacity: 0 });
         this.loadImageInfos();
     };
