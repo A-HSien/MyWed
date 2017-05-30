@@ -26,7 +26,8 @@ export class ImgUploadController {
         $section.on('change', '.img-input', this.handleFile.bind(this));
         $section.on('click', '.js-submit', this.submit.bind(this));
 
-        this.$photo = $section.find('.img-upload-slides').on('click', () => {
+        this.$photo = $section.find('.img-upload-slides');
+        $section.on('click','.js-next', () => {
             this.setResetImageTask(0);
         });
 
