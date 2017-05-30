@@ -25,7 +25,10 @@ export class ImgUploadController {
         $section.on('click', '.file-selector', this.openFileSelector.bind(this));
         $section.on('change', '.img-input', this.handleFile.bind(this));
         $section.on('click', '.js-submit', this.submit.bind(this));
-        this.$photo = $section.find('.img-upload-slides');
+
+        this.$photo = $section.find('.img-upload-slides').on('click', () => {
+            this.setResetImageTask(0);
+        });
 
     };
 
@@ -113,7 +116,7 @@ export class ImgUploadController {
 
     private loadImageInfos() {
         if (this.sectionState === SectionState.Outside) return;
-        
+
         firebase.database().ref('/image').once('value').then((snapshot) => {
             const value = snapshot.val();
             this.imageInfos.forEach(e => {
@@ -121,8 +124,7 @@ export class ImgUploadController {
             });
 
             const newInfos = Object.keys(value).map(key => {
-                const imageInfo = value[key];
-                imageInfo.id = key;
+                value[key].id = key;
                 return value[key];
             });
 
@@ -157,8 +159,12 @@ export class ImgUploadController {
             const img = new Image();
             img.src = url;
 
-            img.onload = () => this.setImage(img.src);
-            img.onerror = () => this.resetImage();
+            img.onload = () => this.setImage(url);
+            img.onerror = () => {
+                this.setResetImageTask(0);
+            };
+        }).catch((error) => {
+            this.setResetImageTask(0);
         });
     };
     private loopTask;
@@ -171,7 +177,12 @@ export class ImgUploadController {
             2,
             { opacity: 1 }
         );
-        this.loopTask = setTimeout(this.resetImage.bind(this), 5000);
+        this.setResetImageTask(5000);
+    };
+
+    private setResetImageTask(delayTime) {
+        clearTimeout(this.loopTask);
+        this.loopTask = setTimeout(this.resetImage.bind(this), delayTime);
     };
 
     private resetImage() {
